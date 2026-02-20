@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL2212120002
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2212120002?filename=crypt_main.jl
   license: CC0
-bsim:
+biosim:
   entrypoint: src.gall2023_agent_based_model_of_the_intestinal_epi_model2212120002_model:Gall2023AgentBasedModelOfTheIntestinalEpiModel2212120002Model
   init_kwargs:
     model_path: data/MODEL2212120002.xml

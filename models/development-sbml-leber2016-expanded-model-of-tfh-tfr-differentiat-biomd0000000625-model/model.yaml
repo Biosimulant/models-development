@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000625
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000625?filename=BIOMD0000000625_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.leber2016_expanded_model_of_tfh_tfr_differentiat_biomd0000000625_model:Leber2016ExpandedModelOfTfhTfrDifferentiatBiomd0000000625Model
   init_kwargs:
     model_path: data/BIOMD0000000625.xml

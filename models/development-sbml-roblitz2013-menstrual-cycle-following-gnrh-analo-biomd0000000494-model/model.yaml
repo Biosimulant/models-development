@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000494
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000494?filename=BIOMD0000000494_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.roblitz2013_menstrual_cycle_following_gnrh_analo_biomd0000000494_model:Roblitz2013MenstrualCycleFollowingGnrhAnaloBiomd0000000494Model
   init_kwargs:
     model_path: data/BIOMD0000000494.xml

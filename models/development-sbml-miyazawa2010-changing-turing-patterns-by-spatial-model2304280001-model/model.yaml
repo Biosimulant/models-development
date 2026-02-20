@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL2304280001
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2304280001?filename=TuringPatterns_MorpheusML_Annotated.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.miyazawa2010_changing_turing_patterns_by_spatial_model2304280001_model:Miyazawa2010ChangingTuringPatternsBySpatialModel2304280001Model
   init_kwargs:
     model_path: data/MODEL2304280001.xml

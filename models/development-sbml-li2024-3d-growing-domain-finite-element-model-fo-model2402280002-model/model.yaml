@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL2402280002
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2402280002?filename=FEM3Dzebrafish.zip
   license: CC0
-bsim:
+biosim:
   entrypoint: src.li2024_3d_growing_domain_finite_element_model_fo_model2402280002_model:Li20243dGrowingDomainFiniteElementModelFoModel2402280002Model
   init_kwargs:
     model_path: data/MODEL2402280002.xml

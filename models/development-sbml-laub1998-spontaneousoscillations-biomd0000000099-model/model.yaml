@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000099
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000099?filename=BIOMD0000000099_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.laub1998_spontaneousoscillations_biomd0000000099_model:Laub1998SpontaneousoscillationsBiomd0000000099Model
   init_kwargs:
     model_path: data/BIOMD0000000099.xml

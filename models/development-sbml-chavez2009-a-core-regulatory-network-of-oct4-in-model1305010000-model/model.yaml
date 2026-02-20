@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1305010000
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1305010000?filename=MODEL1305010000_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.chavez2009_a_core_regulatory_network_of_oct4_in_model1305010000_model:Chavez2009ACoreRegulatoryNetworkOfOct4InModel1305010000Model
   init_kwargs:
     model_path: data/MODEL1305010000.xml

@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000001004
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000001004?filename=Intosalmi2015.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.intosalmi2015_th17_core_network_model_biomd0000001004_model:Intosalmi2015Th17CoreNetworkModelBiomd0000001004Model
   init_kwargs:
     model_path: data/BIOMD0000001004.xml

@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL2105030001
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2105030001?filename=modelBenary2021_EmbryonicDevelopment.m
   license: CC0
-bsim:
+biosim:
   entrypoint: src.benary2021_tissue_dynamics_of_the_hepato_pancrea_model2105030001_model:Benary2021TissueDynamicsOfTheHepatoPancreaModel2105030001Model
   init_kwargs:
     model_path: data/MODEL2105030001.xml

@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1607310000
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1607310000?filename=MODEL1607310000_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.mbodj2016_mesoderm_specification_during_drosophi_model1607310000_model:Mbodj2016MesodermSpecificationDuringDrosophiModel1607310000Model
   init_kwargs:
     model_path: data/MODEL1607310000.xml

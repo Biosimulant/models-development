@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000203
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000203?filename=BIOMD0000000203_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.chickarmane2006_stem_cell_switch_reversible_biomd0000000203_model:Chickarmane2006StemCellSwitchReversibleBiomd0000000203Model
   init_kwargs:
     model_path: data/BIOMD0000000203.xml

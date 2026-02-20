@@ -20,7 +20,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000079
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000079?filename=BIOMD0000000079_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.goldbeter2006_weightcycling_biomd0000000079_model:Goldbeter2006WeightcyclingBiomd0000000079Model
   init_kwargs:
     model_path: data/BIOMD0000000079.xml

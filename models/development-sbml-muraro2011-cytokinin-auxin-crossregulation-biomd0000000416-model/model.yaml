@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000416
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000416?filename=BIOMD0000000416_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.muraro2011_cytokinin_auxin_crossregulation_biomd0000000416_model:Muraro2011CytokininAuxinCrossregulationBiomd0000000416Model
   init_kwargs:
     model_path: data/BIOMD0000000416.xml

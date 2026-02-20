@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL2212120003
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2212120003?filename=GallPinODEfiles2025.zip
   license: CC0
-bsim:
+biosim:
   entrypoint: src.gallandpin2022_ode_model_of_the_intestinal_epith_model2212120003_model:Gallandpin2022OdeModelOfTheIntestinalEpithModel2212120003Model
   init_kwargs:
     model_path: data/MODEL2212120003.xml
