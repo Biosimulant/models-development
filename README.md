@@ -1,67 +1,50 @@
-# models
+# models-development
 
-Public curated monorepo of biological simulation model packs and composed spaces for the **biosim** platform. Models are modular, composable components that can be wired together into full simulation scenarios without writing code — just YAML.
+Curated collection of **developmental biology** simulation models for the **biosim** platform. This repository contains computational models of embryonic development, cell differentiation, tissue patterning, stem cell regulation, and developmental regulatory networks.
 
 ## What's Inside
 
-### Models (20 packages)
+### Models (18 packages)
 
 Each model is a self-contained simulation component with a `model.yaml` manifest.
 
-**Neuroscience** — spiking neural networks, synaptic dynamics, and neural monitoring:
+**Development** — embryonic development, differentiation, and developmental pattern formation:
 
-| Model | Description |
-|-------|-------------|
-| `neuro-izhikevich-population` | Spiking neuron population (Regular Spiking, Fast Spiking presets) |
-| `neuro-hodgkin-huxley-population` | Conductance-based Hodgkin-Huxley neuron population |
-| `neuro-hodgkin-huxley-state-monitor` | Detailed HH state monitor (V, gates, ionic currents) |
-| `neuro-exp-synapse-current` | Exponential-decay synapses with configurable connectivity |
-| `neuro-step-current` | Constant/step current injection into neurons |
-| `neuro-poisson-input` | Poisson-distributed spike train generator |
-| `neuro-spike-monitor` | Spike raster visualization |
-| `neuro-rate-monitor` | Firing rate computation and display |
-| `neuro-state-monitor` | Neuron state variable tracking (membrane potential, etc.) |
-| `neuro-spike-metrics` | Summary statistics from spike streams |
+#### Stem Cell & Pluripotency Models
+- `development-sbml-chickarmane2006-stem-cell-switch-irreversible` — Irreversible stem cell fate switch
+- `development-sbml-chickarmane2006-stem-cell-switch-reversible` — Reversible stem cell fate transitions
+- `development-sbml-chavez2009-a-core-regulatory-network-of-oct4-in` — Oct4 regulatory network in embryonic stem cells
+- `development-sbml-schittler2010-cell-fate-of-progenitor-cells-oste` — Cell fate decisions: osteoblast vs adipocyte
 
-**Ecology** — population dynamics, environments, and ecosystem interactions:
+#### Cell Differentiation & Lineage Specification
+- `development-sbml-deback2012-lineage-specification-in-pancreas-dev` — Pancreas development and lineage specification
+- `development-sbml-intosalmi2015-th17-core-network-model` — Th17 cell differentiation network
+- `development-sbml-leber2016-expanded-model-of-tfh-tfr-differentiat` — T follicular helper (Tfh) and regulatory (Tfr) cell differentiation
+- `development-sbml-mbodj2016-mesoderm-specification-during-drosophi` — Mesoderm specification in Drosophila embryos
 
-| Model | Description |
-|-------|-------------|
-| `ecology-abiotic-environment` | Broadcasts environmental conditions (temperature, water, food, sunlight) |
-| `ecology-organism-population` | Population dynamics with birth, death, and predation |
-| `ecology-predator-prey-interaction` | Predation rates and functional response |
-| `ecology-population-monitor` | Population size tracking over time |
-| `ecology-phase-space-monitor` | Predator vs prey phase-space visualization |
-| `ecology-population-metrics` | Ecosystem summary statistics |
+#### Tissue Dynamics & Pattern Formation
+- `development-sbml-benary2021-tissue-dynamics-of-the-hepato-pancrea` — Tissue dynamics of hepato-pancreatic organ development
+- `development-sbml-gall2023-agent-based-model-of-the-intestinal-epi` — Agent-based model of intestinal epithelium
+- `development-sbml-gallandpin2022-ode-model-of-the-intestinal-epith` — ODE model of intestinal epithelial dynamics
+- `development-sbml-miyazawa2010-changing-turing-patterns-by-spatial` — Turing pattern formation with spatial heterogeneity
+- `development-sbml-li2024-3d-growing-domain-finite-element-model-fo` — 3D growing domain FEM for tissue morphogenesis
 
-**Virtual Cell** — gene regulatory networks, perturbations, and expression monitoring:
+#### Morphogen & Signal Regulation
+- `development-sbml-muraro2011-cytokinin-auxin-crossregulation` — Cytokinin-auxin cross-regulation in plant development
 
-| Model | Description |
-|-------|-------------|
-| `virtualcell-perturbation-source` | Defines gene perturbations (knockout/overexpression) over time |
-| `virtualcell-grn-predictor` | Classical GRN-based virtual cell producing expression profiles |
-| `virtualcell-arc-state-predictor` | Arc Institute State Transition ML model for expression prediction |
-| `virtualcell-expression-translator` | Translates expression profiles into neural input currents |
-| `virtualcell-expression-monitor` | Visualizes gene expression fold-changes and timeseries |
+#### Developmental Oscillators & Cycles
+- `development-sbml-laub1998-spontaneousoscillations` — Spontaneous oscillations in developmental systems
+- `development-sbml-calzone2007-cellcycle` — Cell cycle regulation during development
+- `development-sbml-goldbeter2006-weightcycling` — Weight cycling and metabolic dynamics
 
-### Spaces (6 composed simulations)
-
-Spaces wire multiple models into runnable simulation scenarios.
-
-| Space | Models | Description |
-|-------|--------|-------------|
-| `neuro-single-neuron` | 5 | Single Izhikevich neuron with step current, monitors, and metrics |
-| `neuro-microcircuit` | 13 | Balanced E/I microcircuit: 40 excitatory + 10 inhibitory neurons, Poisson input, recurrent synaptic connectivity |
-| `ecology-predator-prey` | 7 | Classic predator-prey dynamics with environment broadcast and monitors |
-| `ecology-temperature-control` | 7 | Predator-prey ecosystem where environment temperature is an exposed parameter |
-| `virtualcell-drug-neural-effect` | 8 | Virtual cell perturbation translated into a neural spiking response |
+#### Reproductive & Hormonal Development
+- `development-sbml-roblitz2013-menstrual-cycle-following-gnrh-analo` — Menstrual cycle following GnRH analog treatment
 
 ## Layout
 
 ```
-models/
+models-development/
 ├── models/<model-slug>/     # One model package per folder, each with model.yaml
-├── spaces/<space-slug>/     # Composed spaces with space.yaml
 ├── libs/                    # Shared helper code for curated models
 ├── templates/model-pack/    # Starter template for new model packs
 ├── scripts/                 # Manifest and entrypoint validation scripts
@@ -79,25 +62,22 @@ Every model implements the `biosim.BioModule` interface:
 - **`outputs()`** — declares named output signals the module produces
 - **`advance_to(t)`** — advances the model's internal state to time `t`
 
-Most curated models include Python source under `src/` and are wired together via `space.yaml` without additional code.
+Most curated models include Python source under `src/` and are wired together via `space.yaml` in composed simulations without additional code.
 
-### Wiring
+### Model Standards
 
-Spaces connect models by routing outputs to inputs in `space.yaml`:
+All models in this repository:
+- Use SBML (Systems Biology Markup Language) format
+- Are sourced from BioModels and other curated repositories
+- Include tellurium runtime for SBML execution
+- Provide `state` output for monitoring simulation results
+- Support configurable timesteps via `min_dt` parameter
 
-```yaml
-wiring:
-  - from: current_source.current
-    to: [neuron.input_current]
-  - from: neuron.spikes
-    to: [spike_monitor.spikes, rate_monitor.spikes]
-```
+### Running Models
 
-No code changes needed to recombine models into new configurations.
+Models are loaded and executed by the `biosim-platform`. The platform reads `model.yaml`, instantiates the model from its entrypoint, and runs the simulation loop at the configured timestep for the specified duration.
 
-### Running a Space
-
-Spaces are loaded and executed by the `biosim-platform`. The platform reads `space.yaml`, instantiates models from their manifests, wires signals, and runs the simulation loop at the configured `tick_dt` timestep for the specified `duration`.
+Individual models can be integrated into larger composed simulations by wiring their outputs to other models' inputs, enabling multi-scale developmental modeling.
 
 ## Getting Started
 
@@ -117,25 +97,27 @@ pip install "biosim @ git+https://github.com/BioSimulant/biosim.git@main"
 1. Copy `templates/model-pack/` to `models/<your-model-slug>/`
 2. Edit `model.yaml` with metadata, entrypoint, and pinned dependencies
 3. Implement your module (subclass `biosim.BioModule` or use a built-in pack)
-4. Validate: `python scripts/validate_manifests.py && python scripts/check_entrypoints.py`
+4. Add development-specific tags and categorization
+5. Validate: `python scripts/validate_manifests.py && python scripts/check_entrypoints.py`
 
-### Create a New Space
+### Using Models in Spaces
 
-1. Create `spaces/<your-space-slug>/space.yaml`
-2. Reference models by `manifest_path` (e.g., `models/neuro-step-current/model.yaml`)
-3. Define wiring between model outputs and inputs
-4. Set `runtime.duration` and `runtime.tick_dt`
+To integrate developmental biology models into larger simulations:
+
+1. Reference models by `manifest_path` (e.g., `models/development-sbml-chickarmane2006-stem-cell-switch-reversible/model.yaml`)
+2. Wire model outputs to inputs of other models in your space configuration
+3. Compose multi-scale simulations combining development with cell cycle, signaling, or gene regulation
+4. Configure runtime parameters and simulation duration
 
 ## Linking in biosim-platform
 
-- Root manifests can be linked with `manifest_path=model.yaml` or `space.yaml`
-- Subdirectory manifests require explicit paths:
-  - `models/neuro-izhikevich-population/model.yaml`
-  - `spaces/neuro-microcircuit/space.yaml`
+- Models can be linked with explicit paths:
+  - `models/development-sbml-mbodj2016-mesoderm-specification-during-drosophi/model.yaml`
+- Models can be composed with other domain models (signaling, gene regulation, etc.) in multi-scale simulations
 
 ## External Repos
 
-External authors can keep models in independent repositories and link them directly in `biosim-platform`. This monorepo is curated, not exclusive.
+External authors can keep models in independent repositories and link them directly in `biosim-platform`. This repository is curated, not exclusive.
 
 ## Validation & CI
 
@@ -143,7 +125,7 @@ Three scripts enforce repository integrity on every push:
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/validate_manifests.py` | Schema validation for all model.yaml and space.yaml files |
+| `scripts/validate_manifests.py` | Schema validation for all model.yaml files |
 | `scripts/check_entrypoints.py` | Verifies Python entrypoints are importable and callable |
 | `scripts/check_public_boundary.sh` | Prevents business-sensitive content in this public repo |
 
@@ -152,10 +134,34 @@ The CI pipeline (`.github/workflows/ci.yml`) runs: **secret scan** → **manifes
 ## Contributing
 
 - All dependencies must use exact version pinning (`==`)
-- Model slugs use kebab-case with domain prefix (`neuro-`, `ecology-`, `virtualcell-`)
-- Custom modules must follow the `biosim.BioModule` interface
+- Model slugs use kebab-case with domain prefix (`development-sbml-`)
+- Models must follow the `biosim.BioModule` interface
+- SBML models use tellurium runtime for execution
 - Pre-commit hooks enforce trailing whitespace, EOF newlines, YAML syntax, and secret detection
 - See [docs/PUBLIC_INTERNAL_BOUNDARY.md](docs/PUBLIC_INTERNAL_BOUNDARY.md) for content policy
+
+## Domain-Specific Notes
+
+**Developmental Biology Focus Areas:**
+- **Stem Cell Regulation**: Pluripotency networks, fate decisions, irreversible vs reversible switches
+- **Cell Differentiation**: Lineage specification, progenitor commitment, immune cell differentiation
+- **Pattern Formation**: Turing patterns, morphogen gradients, spatial heterogeneity
+- **Tissue Dynamics**: Organ development, epithelial dynamics, growth and remodeling
+- **Regulatory Networks**: Transcription factor networks, signaling cross-regulation
+- **Multi-Scale Modeling**: From molecular networks → cellular decisions → tissue patterning → organ development
+
+**Model Organisms & Systems:**
+- Mammalian (stem cells, tissue development)
+- Drosophila (mesoderm specification)
+- Plant (auxin-cytokinin regulation)
+- Immune system (T cell differentiation)
+
+**Common Model Types:**
+- Bistable switches for irreversible cell fate decisions
+- Oscillatory systems for developmental timing
+- Reaction-diffusion systems for pattern formation
+- Agent-based models for tissue dynamics
+- Finite element methods for growing domains
 
 ## License
 
