@@ -1,0 +1,20 @@
+models:
+- models/development-sbml-benary2021-tissue-dynamics-of-the-hepato-pancrea-model2105030001-model/model.yaml
+- models/development-sbml-calzone2007-cellcycle-biomd0000000144-model/model.yaml
+- models/development-sbml-chavez2009-a-core-regulatory-network-of-oct4-in-model1305010000-model/model.yaml
+- models/development-sbml-chickarmane2006-stem-cell-switch-irreversible-biomd0000000204-model/model.yaml
+- models/development-sbml-chickarmane2006-stem-cell-switch-reversible-biomd0000000203-model/model.yaml
+- models/development-sbml-deback2012-lineage-specification-in-pancreas-dev-biomd0000000435-model/model.yaml
+- models/development-sbml-gall2023-agent-based-model-of-the-intestinal-epi-model2212120002-model/model.yaml
+- models/development-sbml-gallandpin2022-ode-model-of-the-intestinal-epith-model2212120003-model/model.yaml
+- models/development-sbml-goldbeter2006-weightcycling-biomd0000000079-model/model.yaml
+- models/development-sbml-intosalmi2015-th17-core-network-model-biomd0000001004-model/model.yaml
+- models/development-sbml-laub1998-spontaneousoscillations-biomd0000000099-model/model.yaml
+- models/development-sbml-leber2016-expanded-model-of-tfh-tfr-differentiat-biomd0000000625-model/model.yaml
+- models/development-sbml-li2024-3d-growing-domain-finite-element-model-fo-model2402280002-model/model.yaml
+- models/development-sbml-mbodj2016-mesoderm-specification-during-drosophi-model1607310000-model/model.yaml
+- models/development-sbml-miyazawa2010-changing-turing-patterns-by-spatial-model2304280001-model/model.yaml
+- models/development-sbml-muraro2011-cytokinin-auxin-crossregulation-biomd0000000416-model/model.yaml
+- models/development-sbml-roblitz2013-menstrual-cycle-following-gnrh-analo-biomd0000000494-model/model.yaml
+- models/development-sbml-schittler2010-cell-fate-of-progenitor-cells-oste-biomd0000000493-model/model.yaml
+spaces: []
