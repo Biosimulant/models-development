@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Leber2016ExpandedModelOfTfhTfrDifferentiatBiomd0000000625Model'
-description: Leber2016 - Expanded model of Tfh-Tfrdifferentiation - Helicobacter pylori
-  infection The parameters used in the model wereobtained from experiments conducted
-  by the authors, previouspublications [ 1 ,
+description: "Leber2016 - Expanded model of Tfh-Tfrdifferentiation - Helicobacter pylori infection The parameters used in the model wereobtained from experiments conducted by the authors, previouspublications [ 1 ,. It can be used to explore development leber2016 expanded of tfh tfr dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Calzone2007CellcycleBiomd0000000144Model'
-description: 'This is the Dynamical model of nuclear division cycles during early
-  embryogenesis of Drosophila, without StringT regulation. so ksstg=kdstg=0. Figure1B
-  has been simulated by MathSBML. Curator changed '
+description: "This is the Dynamical model of nuclear division cycles during early embryogenesis of Drosophila, without StringT regulation. It can be used to explore development calzone2007 cellcycle BioModels0000000144 dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

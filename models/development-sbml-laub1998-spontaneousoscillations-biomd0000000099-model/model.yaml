@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Laub1998SpontaneousoscillationsBiomd0000000099Model'
-description: This is model according to the paper 'A Molecular Network That Produces
-  Spontaneous Oscillations in Excitalbe Cells of Dictyostelium. Figure 3 has been
-  reproduced by Copasi 4.0.20(development) '. Howe
+description: "This is model according to the paper 'A Molecular Network That Produces Spontaneous Oscillations in Excitalbe Cells of Dictyostelium. It can be used to explore development laub1998 spontaneousoscillations BioModels0000000099 dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Intosalmi2015Th17CoreNetworkModelBiomd0000001004Model'
-description: a dynamic description for the core molecular mechanisms steering Th17
-  cell differentiation and use mathematical modeling to quantitatively predict the
-  resulting molecular dynamics
+description: "a dynamic description for the core molecular mechanisms steering Th17 cell differentiation and use mathematical modeling to quantitatively predict the resulting molecular dynamics. It can be used to explore development intosalmi2015 th17 core network BioModels0000001004 dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

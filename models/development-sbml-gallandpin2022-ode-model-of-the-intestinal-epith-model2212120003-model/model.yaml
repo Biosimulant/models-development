@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Gallandpin2022OdeModelOfTheIntestinalEpithModel2212120003Model'
-description: We developed a compartmental model of the small intestinal epithelium
-  that describes stem and progenitor cell proliferation and differentiation and cell
-  migration onto the villus. The model includes a
+description: "We developed a compartmental model of the small intestinal epithelium that describes stem and progenitor cell proliferation and differentiation and cell migration onto the villus. It can be used to explore development gallandpin2022 ode of the intestinal dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Benary2021TissueDynamicsOfTheHepatoPancreaModel2105030001Model'
-description: Single cell-based studies have revealed tremendous cellular heterogeneity
-  in stem cell and progenitor compartments, suggesting continuous differentiation
-  trajectories with intermixing of cells at vari
+description: "Single cell-based studies have revealed tremendous cellular heterogeneity in stem cell and progenitor compartments, suggesting continuous differentiation trajectories with intermixing of cells at vari. It can be used to explore development benary2021 tissue dynamics of the dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

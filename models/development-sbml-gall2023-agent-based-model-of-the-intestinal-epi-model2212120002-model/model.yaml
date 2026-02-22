@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Gall2023AgentBasedModelOfTheIntestinalEpiModel2212120002Model'
-description: The small intestinal crypt exhibits a defined spatial organisation involving
-  multiple cell types that undergo continuous proliferation and differentiation while
-  migrating towards the villus. We have b
+description: "The small intestinal crypt exhibits a defined spatial organisation involving multiple cell types that undergo continuous proliferation and differentiation while migrating towards the villus. It can be used to explore development gall2023 agent based of the dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

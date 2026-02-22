@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Mbodj2016MesodermSpecificationDuringDrosophiModel1607310000Model'
-description: 'Mbodj2016 - Mesoderm specification duringDrosophila development This
-  model is described in the article: Qualitative Dynamical Modelling Can Formally
-  Explain Mesoderm Specification and Predict Novel De'
+description: "Mbodj2016 - Mesoderm specification duringDrosophila development This model is described in the article: Qualitative Dynamical Modelling Can Formally Explain Mesoderm Specification and Predict Novel De. It can be used to explore development mbodj2016 mesoderm specification during drosophi dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

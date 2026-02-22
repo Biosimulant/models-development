@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Muraro2011CytokininAuxinCrossregulationBiomd0000000416Model'
-description: 'This model is from the article: The influence of cytokinin-auxin cross-regulation
-  on cell-fate determination in Arabidopsis thaliana root development Muraro D, Byrne
-  H, King J, Voss U, Kieber J, Benne'
+description: "This model is from the article: The influence of cytokinin-auxin cross-regulation on cell-fate determination in Arabidopsis thaliana root development Muraro D, Byrne H, King J, Voss U, Kieber J, Benne. It can be used to explore development muraro2011 cytokinin auxin crossregulation BioModels0000000416 dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

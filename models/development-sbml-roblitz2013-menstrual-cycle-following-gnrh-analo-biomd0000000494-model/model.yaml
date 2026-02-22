@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Roblitz2013MenstrualCycleFollowingGnrhAnaloBiomd0000000494Model'
-description: Roblitz2013 - Menstrual Cycle following GnRH analogue administration
-  The model describes the menstrual cycle feedback mechanisms. GnRH, FSH, LH, E2,
-  P4, inbibins A and B, and follicular development ar
+description: "Roblitz2013 - Menstrual Cycle following GnRH analogue administration The model describes the menstrual cycle feedback mechanisms. GnRH, FSH, LH, E2, P4, inbibins A and B, and follicular development ar."
 standard: other
 tags:
 - development

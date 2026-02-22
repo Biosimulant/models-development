@@ -1,6 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Li20243dGrowingDomainFiniteElementModelFoModel2402280002Model'
-description: Faithful wrapper of upstream SBML model.
+description: "Development Li20243d Growing Domain Finite Element Model Fo Model2402280002Model models core biological dynamics as a OTHER simulation curated from biomodels_ebi (biomodels_ebi:MODEL2402280002), focused on deve. When you run it, you can track state over time and compare response patterns across parameter settings."
 standard: other
 tags:
 - development

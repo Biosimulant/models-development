@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Schittler2010CellFateOfProgenitorCellsOsteBiomd0000000493Model'
-description: Schittler2010 - Cell fate of progenitor cells, osteoblasts or chondrocytes
-  Mathematical model describing the mechanism of differentiation of mesenchymal stem
-  cells to bone (osteoblasts) or cartilage (
+description: "Schittler2010 - Cell fate of progenitor cells, osteoblasts or chondrocytes Mathematical model describing the mechanism of differentiation of mesenchymal stem cells to bone (osteoblasts) or cartilage (. It can be used to explore development schittler2010 cell fate of progenitor dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

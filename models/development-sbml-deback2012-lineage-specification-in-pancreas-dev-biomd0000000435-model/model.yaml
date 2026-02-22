@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Deback2012LineageSpecificationInPancreasDevBiomd0000000435Model'
-description: deBack2012 - Lineage Specification in Pancreas Development This model
-  of two neighbouring pancreas precursor cells, describes the exocrine versus endocrine
-  lineage specification process. To account fo
+description: "deBack2012 - Lineage Specification in Pancreas Development This model of two neighbouring pancreas precursor cells, describes the exocrine versus endocrine lineage specification process. It can be used to explore development deback2012 lineage specification in pancreas dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development

@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Development: Chavez2009ACoreRegulatoryNetworkOfOct4InModel1305010000Model'
-description: Chavez2009 - a core regulatory network of OCT4 in human embryonic stem
-  cells A core OCT4-regulated network has been identified as a test case, to analyase
-  stem cell characteristics and cellular differ
+description: "Chavez2009 - a core regulatory network of OCT4 in human embryonic stem cells A core OCT4-regulated network has been identified as a test case, to analyase stem cell characteristics and cellular differ. It can be used to explore development chavez2009 a core regulatory network dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - development
