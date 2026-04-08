@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Development: Gallandpin2022OdeModelOfTheIntestinalEpithModel2212120003Model'
+title: "Gall&Pin2022 - ODE model of the intestinal epithelium"
 description: "We developed a compartmental model of the small intestinal epithelium that describes stem and progenitor cell proliferation and differentiation and cell migration onto the villus. It can be used to explore development gallandpin2022 ode of the intestinal dynamics and compare simulation behavior across conditions."
 standard: other
 tags:

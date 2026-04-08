@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Development: Laub1998SpontaneousoscillationsBiomd0000000099Model'
+title: "Laub1998_SpontaneousOscillations"
 description: "This is model according to the paper 'A Molecular Network That Produces Spontaneous Oscillations in Excitalbe Cells of Dictyostelium. It can be used to explore development laub1998 spontaneousoscillations BioModels0000000099 dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
