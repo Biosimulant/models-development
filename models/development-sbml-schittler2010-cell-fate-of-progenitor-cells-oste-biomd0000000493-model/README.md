@@ -11,14 +11,13 @@ Schittler2010 - Cell fate of progenitor cells, osteoblasts or chondrocytes Mathe
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-schittler2010-cell-fate-of-progenitor-cells-oste-biomd0000000493-model
     alias: model
-    manifest_path: models/development-sbml-schittler2010-cell-fate-of-progenitor-cells-oste-biomd0000000493-model/model.yaml
 ```
 
 ## Tags

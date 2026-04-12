@@ -4,9 +4,8 @@ Generated from monolithic models repo split.
 
 - Domain: development
 - Model count: 18
-- Source: /Volumes/dem-ssd/imp/projects/Nitoons/Biosimulant/models
+- Source: monolithic `models` repository
 
 Layout:
 - models/<slug>/model.yaml
 - scripts/, templates/, docs/, .github/
-

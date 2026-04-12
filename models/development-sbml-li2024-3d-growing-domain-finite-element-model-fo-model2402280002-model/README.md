@@ -11,14 +11,13 @@ Faithful wrapper of upstream SBML model.
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-li2024-3d-growing-domain-finite-element-model-fo-model2402280002-model
     alias: model
-    manifest_path: models/development-sbml-li2024-3d-growing-domain-finite-element-model-fo-model2402280002-model/model.yaml
 ```
 
 ## Tags

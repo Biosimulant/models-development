@@ -11,14 +11,13 @@ This model is according to the paper of A model for the dynamics of human weight
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-goldbeter2006-weightcycling-biomd0000000079-model
     alias: model
-    manifest_path: models/development-sbml-goldbeter2006-weightcycling-biomd0000000079-model/model.yaml
 ```
 
 ## Tags

@@ -11,14 +11,13 @@ Leber2016 - Expanded model of Tfh-Tfrdifferentiation - Helicobacter pylori infec
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-leber2016-expanded-model-of-tfh-tfr-differentiat-biomd0000000625-model
     alias: model
-    manifest_path: models/development-sbml-leber2016-expanded-model-of-tfh-tfr-differentiat-biomd0000000625-model/model.yaml
 ```
 
 ## Tags

@@ -11,14 +11,13 @@ deBack2012 - Lineage Specification in Pancreas Development This model of two nei
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-deback2012-lineage-specification-in-pancreas-dev-biomd0000000435-model
     alias: model
-    manifest_path: models/development-sbml-deback2012-lineage-specification-in-pancreas-dev-biomd0000000435-model/model.yaml
 ```
 
 ## Tags

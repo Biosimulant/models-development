@@ -11,14 +11,13 @@ Roblitz2013 - Menstrual Cycle following GnRH analogue administration The model d
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-roblitz2013-menstrual-cycle-following-gnrh-analo-biomd0000000494-model
     alias: model
-    manifest_path: models/development-sbml-roblitz2013-menstrual-cycle-following-gnrh-analo-biomd0000000494-model/model.yaml
 ```
 
 ## Tags

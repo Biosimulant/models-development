@@ -11,14 +11,13 @@ Biologists have long been fascinated by the amazing diversity of animal colour p
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-miyazawa2010-changing-turing-patterns-by-spatial-model2304280001-model
     alias: model
-    manifest_path: models/development-sbml-miyazawa2010-changing-turing-patterns-by-spatial-model2304280001-model/model.yaml
 ```
 
 ## Tags

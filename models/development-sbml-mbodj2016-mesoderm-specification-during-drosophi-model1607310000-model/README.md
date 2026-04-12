@@ -11,14 +11,13 @@ Mbodj2016 - Mesoderm specification duringDrosophila development This model is de
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-mbodj2016-mesoderm-specification-during-drosophi-model1607310000-model
     alias: model
-    manifest_path: models/development-sbml-mbodj2016-mesoderm-specification-during-drosophi-model1607310000-model/model.yaml
 ```
 
 ## Tags

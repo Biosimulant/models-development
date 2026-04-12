@@ -11,14 +11,13 @@ Single cell-based studies have revealed tremendous cellular heterogeneity in ste
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-benary2021-tissue-dynamics-of-the-hepato-pancrea-model2105030001-model
     alias: model
-    manifest_path: models/development-sbml-benary2021-tissue-dynamics-of-the-hepato-pancrea-model2105030001-model/model.yaml
 ```
 
 ## Tags

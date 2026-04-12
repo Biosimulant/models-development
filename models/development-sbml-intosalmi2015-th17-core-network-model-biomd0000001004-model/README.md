@@ -11,14 +11,13 @@ a dynamic description for the core molecular mechanisms steering Th17 cell diffe
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-intosalmi2015-th17-core-network-model-biomd0000001004-model
     alias: model
-    manifest_path: models/development-sbml-intosalmi2015-th17-core-network-model-biomd0000001004-model/model.yaml
 ```
 
 ## Tags

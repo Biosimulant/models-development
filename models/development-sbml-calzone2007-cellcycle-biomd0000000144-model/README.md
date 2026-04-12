@@ -11,14 +11,13 @@ This is the Dynamical model of nuclear division cycles during early embryogenesi
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/development-sbml-calzone2007-cellcycle-biomd0000000144-model
     alias: model
-    manifest_path: models/development-sbml-calzone2007-cellcycle-biomd0000000144-model/model.yaml
 ```
 
 ## Tags
