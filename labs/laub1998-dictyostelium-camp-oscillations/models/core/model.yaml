@@ -1,0 +1,78 @@
+schema_version: '2.0'
+title: Laub1998 Dictyostelium cyclic AMP oscillation SBML model
+description: Dictyostelium cyclic AMP signaling oscillator executed directly from
+  the bundled SBML source.
+standard: sbml
+tags:
+- development
+- sbml
+- tellurium
+- faithful
+authors:
+- Biosimulant Team
+- M T Laub
+- W F Loomis
+upstream:
+  id: biomodels_ebi:BIOMD0000000099
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000099
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000099
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000099?filename=BIOMD0000000099_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.laub1998_spontaneousoscillations_biomd0000000099_model:Laub1998SpontaneousoscillationsBiomd0000000099Model
+  init_kwargs:
+    model_path: data/BIOMD0000000099.xml
+    integration_step: 0.1
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: integration_step
+  value: 0.1
+  min: 0.0
+  units: model_time
+  description: Internal Tellurium sampling step.
+io:
+  inputs: []
+  outputs:
+  - name: extracellular_cyclic_amp
+    maps_to: species_0
+    label: Extracellular cyclic AMP
+    description: Extracellular cyclic AMP. Maps to SBML symbol `species_0`.
+  - name: intracellular_cyclic_amp
+    maps_to: species_1
+    label: Intracellular cyclic AMP
+    description: Intracellular cyclic AMP. Maps to SBML symbol `species_1`.
+  - name: protein_kinase_a_activity
+    maps_to: species_2
+    label: Protein kinase A activity
+    description: Protein kinase A activity. Maps to SBML symbol `species_2`.
+  - name: cyclic_amp_phosphodiesterase_regulator_a
+    maps_to: species_3
+    label: cAMP phosphodiesterase REGA
+    description: cAMP phosphodiesterase REGA. Maps to SBML symbol `species_3`.
+  - name: adenylate_cyclase_a
+    maps_to: species_4
+    label: Adenylate cyclase A
+    description: Adenylate cyclase A. Maps to SBML symbol `species_4`.
+  - name: cyclic_amp_receptor_one
+    maps_to: species_5
+    label: Cyclic AMP receptor 1
+    description: Cyclic AMP receptor 1. Maps to SBML symbol `species_5`.
+  - name: extracellular_signal_regulated_kinase_two
+    maps_to: species_6
+    label: ERK2
+    description: ERK2. Maps to SBML symbol `species_6`.
+  - name: state
+    description: Full friendly observable record for reproducibility and downstream
+      visualisation. Raw SBML symbols remain traceable through maps_to and wrapper
+      metadata.
+  - name: summary
+    description: Largest-change and peak summary across the simulated friendly observables.
+  - name: species_labels
+    description: Mapping from friendly observable keys to display labels.

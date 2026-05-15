@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "e69263fc-9d7b-4a0d-9ecf-450379e7db86",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "c67df92e-1fbb-43a0-8d8d-1d94ca93bace",
+  "created_at": "2026-05-15T16:00:59.189035383+00:00",
+  "last_synced_at": "2026-05-15T17:01:25.770485+00:00",
+  "hub_manifest_hash": "9864b2c5de1ed1b86f0f984393d5d489fe578e1682a7233ecf27a4537320f12a",
+  "package_name": "schittler2010-progenitor-cell-fate-lab"
+}

@@ -1,0 +1,76 @@
+schema_version: '2.0'
+title: Calzone2007 Drosophila embryo cell-cycle SBML model
+description: Early Drosophila embryonic nuclear division cycle model executed directly
+  from the bundled SBML source.
+standard: sbml
+tags:
+- development
+- sbml
+- tellurium
+- faithful
+authors:
+- Biosimulant Team
+- Laurence Calzone
+- Denis Thieffry
+- John J Tyson
+- Bela Novak
+upstream:
+  id: biomodels_ebi:BIOMD0000000144
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000144
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000144
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000144?filename=BIOMD0000000144_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.calzone2007_cellcycle_biomd0000000144_model:Calzone2007CellcycleBiomd0000000144Model
+  init_kwargs:
+    model_path: data/BIOMD0000000144.xml
+    integration_step: 0.1
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: integration_step
+  value: 0.1
+  min: 0.0
+  units: model_time
+  description: Internal Tellurium sampling step.
+io:
+  inputs: []
+  outputs:
+  - name: cytoplasmic_maturation_promoting_factor
+    maps_to: MPFc
+    label: Cytoplasmic MPF
+    description: Cytoplasmic MPF. Maps to SBML symbol `MPFc`.
+  - name: nuclear_maturation_promoting_factor
+    maps_to: MPFn
+    label: Nuclear MPF
+    description: Nuclear MPF. Maps to SBML symbol `MPFn`.
+  - name: cytoplasmic_string_phosphatase
+    maps_to: StgPc
+    label: Cytoplasmic String phosphatase
+    description: Cytoplasmic String phosphatase. Maps to SBML symbol `StgPc`.
+  - name: cytoplasmic_wee_one_kinase
+    maps_to: Wee1c
+    label: Cytoplasmic Wee1 kinase
+    description: Cytoplasmic Wee1 kinase. Maps to SBML symbol `Wee1c`.
+  - name: total_cyclin_b
+    maps_to: CycBT
+    label: Total cyclin B
+    description: Total cyclin B. Maps to SBML symbol `CycBT`.
+  - name: nuclear_division_state
+    maps_to: N
+    label: Nuclear division state
+    description: Nuclear division state. Maps to SBML symbol `N`.
+  - name: state
+    description: Full friendly observable record for reproducibility and downstream
+      visualisation. Raw SBML symbols remain traceable through maps_to and wrapper
+      metadata.
+  - name: summary
+    description: Largest-change and peak summary across the simulated friendly observables.
+  - name: species_labels
+    description: Mapping from friendly observable keys to display labels.

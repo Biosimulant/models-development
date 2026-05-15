@@ -1,0 +1,79 @@
+schema_version: '2.0'
+title: deBack2012 Pancreas Lineage Specification Lab Visualisation
+description: Dedicated presentation model for deBack2012 Pancreas Lineage Specification
+  Lab.
+standard: other
+tags:
+- development
+- visualisation
+authors:
+- Biosimulant Team
+biosim:
+  entrypoint: src.development_visualisation:DevelopmentVisualisationModel
+  init_kwargs:
+    integration_step: 1.0
+    lab_title: deBack2012 Pancreas Lineage Specification Lab
+    question: Do adjacent pancreas precursor cells diverge in lineage-program state?
+    answer_focus: The answer compares first and second lineage signals in two neighboring
+      precursor cells.
+    caveat: First/second signal names are conservative because the SBML exposes generic
+      Xi, Yi, Xj, and Yj symbols.
+    observables:
+    - source_id: species_1
+      port: cell_i_first_lineage_signal
+      label: Cell i first lineage signal
+      group: cell_i
+    - source_id: species_2
+      port: cell_i_second_lineage_signal
+      label: Cell i second lineage signal
+      group: cell_i
+    - source_id: species_3
+      port: cell_j_first_lineage_signal
+      label: Cell j first lineage signal
+      group: cell_j
+    - source_id: species_4
+      port: cell_j_second_lineage_signal
+      label: Cell j second lineage signal
+      group: cell_j
+    phase:
+      x: cell_i_first_lineage_signal
+      y: cell_j_first_lineage_signal
+      x_label: Cell i first lineage signal
+      y_label: Cell j first lineage signal
+      title: Cell i first lineage signal vs Cell j first lineage signal
+  communication_step: 1.0
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: model_time
+  description: Sampling step for the visualisation model.
+io:
+  inputs:
+  - name: core_state
+    description: Current friendly observable values from the core model.
+    schema:
+      cell_i_first_lineage_signal: float
+      cell_i_second_lineage_signal: float
+      cell_j_first_lineage_signal: float
+      cell_j_second_lineage_signal: float
+  - name: core_summary
+    description: Core model run summary.
+    schema:
+      duration_simulated: float
+      observable_count: int
+      largest_change_observable: str
+      largest_change_magnitude: float
+      peak_observable: str
+      peak_value: float
+  - name: core_species_labels
+    description: Human-readable labels for core observables.
+    schema:
+      cell_i_first_lineage_signal: str
+      cell_i_second_lineage_signal: str
+      cell_j_first_lineage_signal: str
+      cell_j_second_lineage_signal: str
+  outputs: []

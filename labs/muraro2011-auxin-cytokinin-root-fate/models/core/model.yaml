@@ -1,0 +1,110 @@
+schema_version: '2.0'
+title: Muraro2011 auxin-cytokinin root cell-fate SBML model
+description: Auxin-cytokinin cross-regulation model for Arabidopsis root cell-fate determination
+  executed directly from SBML.
+standard: sbml
+tags:
+- development
+- sbml
+- tellurium
+- faithful
+authors:
+- Biosimulant Team
+- Daniele Muraro
+- Helen Byrne
+- John R King
+- Ute Voss
+- Joseph Kieber
+upstream:
+  id: biomodels_ebi:BIOMD0000000416
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000416
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000416
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000416?filename=BIOMD0000000416_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.muraro2011_cytokinin_auxin_crossregulation_biomd0000000416_model:Muraro2011CytokininAuxinCrossregulationBiomd0000000416Model
+  init_kwargs:
+    model_path: data/BIOMD0000000416.xml
+    integration_step: 0.1
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: integration_step
+  value: 0.1
+  min: 0.0
+  units: model_time
+  description: Internal Tellurium sampling step.
+io:
+  inputs:
+  - name: starting_auxin_level
+    maps_to: Aux
+    label: Starting auxin level
+    default: 1.0
+    units: native SBML value
+    description: Setup-time initial auxin level for the root-fate network. Maps to SBML symbol
+      `Aux`.
+  - name: starting_cytokinin_level
+    maps_to: Ck
+    label: Starting cytokinin level
+    default: 1.0
+    units: native SBML value
+    description: Setup-time initial cytokinin level for the root-fate network. Maps to SBML
+      symbol `Ck`.
+  outputs:
+  - name: auxin
+    maps_to: Aux
+    label: Auxin
+    description: Auxin. Maps to SBML symbol `Aux`.
+  - name: cytokinin
+    maps_to: Ck
+    label: Cytokinin
+    description: Cytokinin. Maps to SBML symbol `Ck`.
+  - name: indole_3_acetic_acid_messenger_rna
+    maps_to: IAAm
+    label: IAA mRNA
+    description: IAA mRNA. Maps to SBML symbol `IAAm`.
+  - name: indole_3_acetic_acid_protein
+    maps_to: IAAp
+    label: IAA protein
+    description: IAA protein. Maps to SBML symbol `IAAp`.
+  - name: auxin_transport_inhibitor_response_1_complex
+    maps_to: AuxTIR1
+    label: Auxin-TIR1 complex
+    description: Auxin-TIR1 complex. Maps to SBML symbol `AuxTIR1`.
+  - name: auxin_indole_3_acetic_acid_complex
+    maps_to: AuxTIAA
+    label: Auxin-IAA complex
+    description: Auxin-IAA complex. Maps to SBML symbol `AuxTIAA`.
+  - name: auxin_response_factor_activity
+    maps_to: ARF
+    label: ARF activity
+    description: ARF activity. Maps to SBML symbol `ARF`.
+  - name: pinformed_messenger_rna
+    maps_to: PINm
+    label: PIN mRNA
+    description: PIN mRNA. Maps to SBML symbol `PINm`.
+  - name: pinformed_protein
+    maps_to: PINp
+    label: PIN protein
+    description: PIN protein. Maps to SBML symbol `PINp`.
+  - name: response_regulator_a
+    maps_to: ARRAp
+    label: Response regulator A
+    description: Response regulator A. Maps to SBML symbol `ARRAp`.
+  - name: response_regulator_b
+    maps_to: ARRBp
+    label: Response regulator B
+    description: Response regulator B. Maps to SBML symbol `ARRBp`.
+  - name: state
+    description: Full friendly observable record for reproducibility and downstream visualisation.
+      Raw SBML symbols remain traceable through maps_to and wrapper metadata.
+  - name: summary
+    description: Largest-change and peak summary across the simulated friendly observables.
+  - name: species_labels
+    description: Mapping from friendly observable keys to display labels.

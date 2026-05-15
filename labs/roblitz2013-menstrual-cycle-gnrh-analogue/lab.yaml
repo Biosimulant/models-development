@@ -1,0 +1,106 @@
+schema_version: '2.0'
+title: Roblitz2013 Menstrual Cycle GnRH Analogue Lab
+description: Menstrual-cycle hormone and follicular development model executed directly from
+  the bundled SBML source.
+models:
+- alias: roblitz2013_menstrual_cycle
+  path: models/core
+  parameters:
+    model_path: data/BIOMD0000000494.xml
+    integration_step: 0.25
+- alias: visualisation
+  path: models/visualisation
+wiring:
+- from: roblitz2013_menstrual_cycle.state
+  to:
+  - visualisation.core_state
+- from: roblitz2013_menstrual_cycle.summary
+  to:
+  - visualisation.core_summary
+- from: roblitz2013_menstrual_cycle.species_labels
+  to:
+  - visualisation.core_species_labels
+io:
+  inputs:
+  - name: gnrh_agonist_dose
+    maps_to: roblitz2013_menstrual_cycle.gnrh_agonist_dose
+    label: GnRH agonist dose
+    default: 100.0
+    units: native SBML dose
+    description: Sets the named GnRH agonist dose parameter. Maps to SBML parameter `p272`
+      (`dose_Ago`).
+  - name: gnrh_agonist_start_day
+    maps_to: roblitz2013_menstrual_cycle.gnrh_agonist_start_day
+    label: GnRH agonist start day
+    default: 91.0
+    units: day
+    description: Sets the named GnRH agonist administration start day. Maps to SBML parameter
+      `p269` (`t_0_Ago`).
+  - name: gnrh_antagonist_dose
+    maps_to: roblitz2013_menstrual_cycle.gnrh_antagonist_dose
+    label: GnRH antagonist dose
+    default: 500.0
+    units: native SBML dose
+    description: Sets the named GnRH antagonist dose parameter. Maps to SBML parameter `p472`
+      (`dose_Ant`).
+  - name: gnrh_antagonist_start_day
+    maps_to: roblitz2013_menstrual_cycle.gnrh_antagonist_start_day
+    label: GnRH antagonist start day
+    default: 34.0
+    units: day
+    description: Sets the named GnRH antagonist administration start day. Maps to SBML parameter
+      `p469` (`t_0_Ant`).
+  outputs:
+  - name: gonadotropin_releasing_hormone
+    maps_to: roblitz2013_menstrual_cycle.gonadotropin_releasing_hormone
+    label: GnRH
+    description: GnRH. Maps to SBML symbol `GnRH`.
+  - name: follicle_stimulating_hormone_blood
+    maps_to: roblitz2013_menstrual_cycle.follicle_stimulating_hormone_blood
+    label: Blood FSH
+    description: Blood FSH. Maps to SBML symbol `FSH_bld`.
+  - name: luteinizing_hormone_blood
+    maps_to: roblitz2013_menstrual_cycle.luteinizing_hormone_blood
+    label: Blood LH
+    description: Blood LH. Maps to SBML symbol `LH_bld`.
+  - name: estradiol
+    maps_to: roblitz2013_menstrual_cycle.estradiol
+    label: Estradiol
+    description: Estradiol. Maps to SBML symbol `E2`.
+  - name: progesterone
+    maps_to: roblitz2013_menstrual_cycle.progesterone
+    label: Progesterone
+    description: Progesterone. Maps to SBML symbol `P4`.
+  - name: inhibin_a
+    maps_to: roblitz2013_menstrual_cycle.inhibin_a
+    label: Inhibin A
+    description: Inhibin A. Maps to SBML symbol `InhA`.
+  - name: inhibin_b
+    maps_to: roblitz2013_menstrual_cycle.inhibin_b
+    label: Inhibin B
+    description: Inhibin B. Maps to SBML symbol `InhB`.
+  - name: ovulatory_follicle
+    maps_to: roblitz2013_menstrual_cycle.ovulatory_follicle
+    label: Ovulatory follicle
+    description: Ovulatory follicle. Maps to SBML symbol `OvF`.
+  - name: luteal_stage_one
+    maps_to: roblitz2013_menstrual_cycle.luteal_stage_one
+    label: Luteal stage 1
+    description: Luteal stage 1. Maps to SBML symbol `Lut1`.
+  - name: luteal_stage_four
+    maps_to: roblitz2013_menstrual_cycle.luteal_stage_four
+    label: Luteal stage 4
+    description: Luteal stage 4. Maps to SBML symbol `Lut4`.
+  - name: state
+    maps_to: roblitz2013_menstrual_cycle.state
+    description: Full friendly observable record.
+  - name: summary
+    maps_to: roblitz2013_menstrual_cycle.summary
+    description: Core model run summary.
+  - name: species_labels
+    maps_to: roblitz2013_menstrual_cycle.species_labels
+    description: Friendly observable display labels.
+runtime:
+  duration: 28.0
+  communication_step: 1.0
+  initial_inputs: {}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "4575e373-dabf-4e7d-8aa9-aa05663a0fcf",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "8a95e6ad-f06d-442b-8c0f-f4afa4fca09f",
+  "created_at": "2026-05-15T14:37:25.532601034+00:00",
+  "last_synced_at": "2026-05-15T16:59:16.190134+00:00",
+  "hub_manifest_hash": "02efae49d8a52d29cb1590843b8da7136edd4efa29c15bae472c47fa1bcca0e1",
+  "package_name": "intosalmi2015-th17-differentiation-network-lab"
+}

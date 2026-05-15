@@ -1,0 +1,120 @@
+schema_version: '2.0'
+title: Roblitz2013 menstrual-cycle GnRH analogue SBML model
+description: Menstrual-cycle hormone and follicular development model executed directly from
+  the bundled SBML source.
+standard: sbml
+tags:
+- development
+- sbml
+- tellurium
+- faithful
+authors:
+- Biosimulant Team
+- "Susanna R\xF6blitz"
+- "Claudia St\xF6tzel"
+- Peter Deuflhard
+- Hannah M Jones
+- David-Olivier Azulay
+upstream:
+  id: biomodels_ebi:BIOMD0000000494
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000494
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000494
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000494?filename=BIOMD0000000494_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.roblitz2013_menstrual_cycle_following_gnrh_analo_biomd0000000494_model:Roblitz2013MenstrualCycleFollowingGnrhAnaloBiomd0000000494Model
+  init_kwargs:
+    model_path: data/BIOMD0000000494.xml
+    integration_step: 0.25
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: integration_step
+  value: 0.25
+  min: 0.0
+  units: model_time
+  description: Internal Tellurium sampling step.
+io:
+  inputs:
+  - name: gnrh_agonist_dose
+    maps_to: p272
+    label: GnRH agonist dose
+    default: 100.0
+    units: native SBML dose
+    description: Sets the named GnRH agonist dose parameter. Maps to SBML parameter `p272`
+      (`dose_Ago`).
+  - name: gnrh_agonist_start_day
+    maps_to: p269
+    label: GnRH agonist start day
+    default: 91.0
+    units: day
+    description: Sets the named GnRH agonist administration start day. Maps to SBML parameter
+      `p269` (`t_0_Ago`).
+  - name: gnrh_antagonist_dose
+    maps_to: p472
+    label: GnRH antagonist dose
+    default: 500.0
+    units: native SBML dose
+    description: Sets the named GnRH antagonist dose parameter. Maps to SBML parameter `p472`
+      (`dose_Ant`).
+  - name: gnrh_antagonist_start_day
+    maps_to: p469
+    label: GnRH antagonist start day
+    default: 34.0
+    units: day
+    description: Sets the named GnRH antagonist administration start day. Maps to SBML parameter
+      `p469` (`t_0_Ant`).
+  outputs:
+  - name: gonadotropin_releasing_hormone
+    maps_to: GnRH
+    label: GnRH
+    description: GnRH. Maps to SBML symbol `GnRH`.
+  - name: follicle_stimulating_hormone_blood
+    maps_to: FSH_bld
+    label: Blood FSH
+    description: Blood FSH. Maps to SBML symbol `FSH_bld`.
+  - name: luteinizing_hormone_blood
+    maps_to: LH_bld
+    label: Blood LH
+    description: Blood LH. Maps to SBML symbol `LH_bld`.
+  - name: estradiol
+    maps_to: E2
+    label: Estradiol
+    description: Estradiol. Maps to SBML symbol `E2`.
+  - name: progesterone
+    maps_to: P4
+    label: Progesterone
+    description: Progesterone. Maps to SBML symbol `P4`.
+  - name: inhibin_a
+    maps_to: InhA
+    label: Inhibin A
+    description: Inhibin A. Maps to SBML symbol `InhA`.
+  - name: inhibin_b
+    maps_to: InhB
+    label: Inhibin B
+    description: Inhibin B. Maps to SBML symbol `InhB`.
+  - name: ovulatory_follicle
+    maps_to: OvF
+    label: Ovulatory follicle
+    description: Ovulatory follicle. Maps to SBML symbol `OvF`.
+  - name: luteal_stage_one
+    maps_to: Lut1
+    label: Luteal stage 1
+    description: Luteal stage 1. Maps to SBML symbol `Lut1`.
+  - name: luteal_stage_four
+    maps_to: Lut4
+    label: Luteal stage 4
+    description: Luteal stage 4. Maps to SBML symbol `Lut4`.
+  - name: state
+    description: Full friendly observable record for reproducibility and downstream visualisation.
+      Raw SBML symbols remain traceable through maps_to and wrapper metadata.
+  - name: summary
+    description: Largest-change and peak summary across the simulated friendly observables.
+  - name: species_labels
+    description: Mapping from friendly observable keys to display labels.

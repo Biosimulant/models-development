@@ -1,0 +1,62 @@
+schema_version: '2.0'
+title: Calzone2007 Drosophila Embryo Cell Cycle Lab
+description: Early Drosophila embryonic nuclear division cycle model executed directly
+  from the bundled SBML source.
+models:
+- alias: calzone2007_cell_cycle
+  path: models/core
+  parameters:
+    model_path: data/BIOMD0000000144.xml
+    integration_step: 0.1
+- alias: visualisation
+  path: models/visualisation
+wiring:
+- from: calzone2007_cell_cycle.state
+  to:
+  - visualisation.core_state
+- from: calzone2007_cell_cycle.summary
+  to:
+  - visualisation.core_summary
+- from: calzone2007_cell_cycle.species_labels
+  to:
+  - visualisation.core_species_labels
+io:
+  inputs: []
+  outputs:
+  - name: cytoplasmic_maturation_promoting_factor
+    maps_to: calzone2007_cell_cycle.cytoplasmic_maturation_promoting_factor
+    label: Cytoplasmic MPF
+    description: Cytoplasmic MPF. Maps to SBML symbol `MPFc`.
+  - name: nuclear_maturation_promoting_factor
+    maps_to: calzone2007_cell_cycle.nuclear_maturation_promoting_factor
+    label: Nuclear MPF
+    description: Nuclear MPF. Maps to SBML symbol `MPFn`.
+  - name: cytoplasmic_string_phosphatase
+    maps_to: calzone2007_cell_cycle.cytoplasmic_string_phosphatase
+    label: Cytoplasmic String phosphatase
+    description: Cytoplasmic String phosphatase. Maps to SBML symbol `StgPc`.
+  - name: cytoplasmic_wee_one_kinase
+    maps_to: calzone2007_cell_cycle.cytoplasmic_wee_one_kinase
+    label: Cytoplasmic Wee1 kinase
+    description: Cytoplasmic Wee1 kinase. Maps to SBML symbol `Wee1c`.
+  - name: total_cyclin_b
+    maps_to: calzone2007_cell_cycle.total_cyclin_b
+    label: Total cyclin B
+    description: Total cyclin B. Maps to SBML symbol `CycBT`.
+  - name: nuclear_division_state
+    maps_to: calzone2007_cell_cycle.nuclear_division_state
+    label: Nuclear division state
+    description: Nuclear division state. Maps to SBML symbol `N`.
+  - name: state
+    maps_to: calzone2007_cell_cycle.state
+    description: Full friendly observable record.
+  - name: summary
+    maps_to: calzone2007_cell_cycle.summary
+    description: Core model run summary.
+  - name: species_labels
+    maps_to: calzone2007_cell_cycle.species_labels
+    description: Friendly observable display labels.
+runtime:
+  duration: 10.0
+  communication_step: 1.0
+  initial_inputs: {}

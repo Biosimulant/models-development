@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "e2337237-a626-4f69-8c1c-e4d772835315",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "a35dc102-ad8f-4278-8814-4654a533caf8",
+  "created_at": "2026-05-15T16:00:59.078200933+00:00",
+  "last_synced_at": "2026-05-15T16:58:57.501823+00:00",
+  "hub_manifest_hash": "348d3c5e15daa57dc596c010211c74413a3b024131a5d37cd8c538a60293442a",
+  "package_name": "deback2012-pancreas-lineage-specification-lab"
+}

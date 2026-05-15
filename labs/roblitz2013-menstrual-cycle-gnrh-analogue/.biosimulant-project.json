@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "32c4a43f-2529-4645-9479-5bae77d121aa",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "0aa0e3cd-a3ca-418c-8169-aca91bc17943",
+  "created_at": "2026-05-15T16:00:59.170119858+00:00",
+  "last_synced_at": "2026-05-15T17:01:04.913287+00:00",
+  "hub_manifest_hash": "1f949141c283c7381eec1c60adc740fc215af720beba73c6512fefd9e1d2c4b3",
+  "package_name": "roblitz2013-menstrual-cycle-gnrh-analogue-lab"
+}

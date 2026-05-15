@@ -1,0 +1,102 @@
+schema_version: '2.0'
+title: Intosalmi2015 Th17 differentiation network SBML model
+description: Core molecular network steering Th17 cell differentiation executed directly from
+  the bundled SBML source.
+standard: sbml
+tags:
+- development
+- sbml
+- tellurium
+- faithful
+authors:
+- Biosimulant Team
+- Jukka Intosalmi
+- Helena Ahlfors
+- Sini Rautio
+- "Henrik Mannerst\xF6m"
+- Zhi Jane Chen
+upstream:
+  id: biomodels_ebi:BIOMD0000001004
+  source_db: biomodels_ebi
+  source_id: BIOMD0000001004
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000001004
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000001004?filename=Intosalmi2015.xml
+  license: CC0
+biosim:
+  entrypoint: src.intosalmi2015_th17_core_network_model_biomd0000001004_model:Intosalmi2015Th17CoreNetworkModelBiomd0000001004Model
+  init_kwargs:
+    model_path: data/BIOMD0000001004.xml
+    integration_step: 0.1
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: integration_step
+  value: 0.1
+  min: 0.0
+  units: model_time
+  description: Internal Tellurium sampling step.
+io:
+  inputs:
+  - name: starting_interleukin_6_signal
+    maps_to: IL6ext
+    label: Starting IL-6 signal
+    default: 1.0
+    units: native SBML value
+    description: Setup-time initial extracellular IL-6 signal for the Th17 network. Maps to
+      SBML symbol `IL6ext`.
+  - name: starting_transforming_growth_factor_beta_signal
+    maps_to: TGFbext
+    label: Starting TGF-beta signal
+    default: 1.0
+    units: native SBML value
+    description: Setup-time initial extracellular TGF-beta signal for the Th17 network. Maps
+      to SBML symbol `TGFbext`.
+  outputs:
+  - name: external_interleukin_6
+    maps_to: IL6ext
+    label: External IL-6
+    description: External IL-6. Maps to SBML symbol `IL6ext`.
+  - name: internal_interleukin_6
+    maps_to: IL6int
+    label: Internal IL-6
+    description: Internal IL-6. Maps to SBML symbol `IL6int`.
+  - name: signal_transducer_and_activator_of_transcription_3_messenger_rna
+    maps_to: STAT3mRNA
+    label: STAT3 mRNA
+    description: STAT3 mRNA. Maps to SBML symbol `STAT3mRNA`.
+  - name: active_signal_transducer_and_activator_of_transcription_3
+    maps_to: STAT3prot_star
+    label: Active STAT3
+    description: Active STAT3. Maps to SBML symbol `STAT3prot_star`.
+  - name: external_transforming_growth_factor_beta
+    maps_to: TGFbext
+    label: External TGF-beta
+    description: External TGF-beta. Maps to SBML symbol `TGFbext`.
+  - name: internal_transforming_growth_factor_beta
+    maps_to: TGFbint
+    label: Internal TGF-beta
+    description: Internal TGF-beta. Maps to SBML symbol `TGFbint`.
+  - name: retinoic_acid_receptor_related_orphan_receptor_gamma_t_messenger_rna
+    maps_to: RORgtmRNA
+    label: ROR-gamma-t mRNA
+    description: ROR-gamma-t mRNA. Maps to SBML symbol `RORgtmRNA`.
+  - name: active_forkhead_box_p3
+    maps_to: FOXP3prot_star
+    label: Active FOXP3
+    description: Active FOXP3. Maps to SBML symbol `FOXP3prot_star`.
+  - name: forkhead_box_p3_messenger_rna
+    maps_to: FOXP3mRNA
+    label: FOXP3 mRNA
+    description: FOXP3 mRNA. Maps to SBML symbol `FOXP3mRNA`.
+  - name: state
+    description: Full friendly observable record for reproducibility and downstream visualisation.
+      Raw SBML symbols remain traceable through maps_to and wrapper metadata.
+  - name: summary
+    description: Largest-change and peak summary across the simulated friendly observables.
+  - name: species_labels
+    description: Mapping from friendly observable keys to display labels.

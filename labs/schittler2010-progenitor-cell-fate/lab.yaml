@@ -1,0 +1,70 @@
+schema_version: '2.0'
+title: Schittler2010 Progenitor Cell Fate Lab
+description: Mesenchymal progenitor fate model for osteoblast or chondrocyte differentiation
+  executed directly from SBML.
+models:
+- alias: schittler2010_progenitor_fate
+  path: models/core
+  parameters:
+    model_path: data/BIOMD0000000493.xml
+    integration_step: 0.1
+- alias: visualisation
+  path: models/visualisation
+wiring:
+- from: schittler2010_progenitor_fate.state
+  to:
+  - visualisation.core_state
+- from: schittler2010_progenitor_fate.summary
+  to:
+  - visualisation.core_summary
+- from: schittler2010_progenitor_fate.species_labels
+  to:
+  - visualisation.core_species_labels
+io:
+  inputs:
+  - name: starting_progenitor_cells
+    maps_to: schittler2010_progenitor_fate.starting_progenitor_cells
+    label: Starting progenitor cells
+    default: 12.03
+    units: native SBML value
+    description: Setup-time initial progenitor-cell state. Maps to SBML symbol `P`.
+  - name: starting_bone_fate_cells
+    maps_to: schittler2010_progenitor_fate.starting_bone_fate_cells
+    label: Starting bone-fate cells
+    default: 0.14
+    units: native SBML value
+    description: Setup-time initial osteoblast or bone-fate cell state. Maps to SBML symbol
+      `O`.
+  - name: starting_cartilage_fate_cells
+    maps_to: schittler2010_progenitor_fate.starting_cartilage_fate_cells
+    label: Starting cartilage-fate cells
+    default: 0.14
+    units: native SBML value
+    description: Setup-time initial chondrocyte or cartilage-fate cell state. Maps to SBML
+      symbol `C`.
+  outputs:
+  - name: progenitor_cells
+    maps_to: schittler2010_progenitor_fate.progenitor_cells
+    label: Progenitor cells
+    description: Progenitor cells. Maps to SBML symbol `P`.
+  - name: osteoblast_cells
+    maps_to: schittler2010_progenitor_fate.osteoblast_cells
+    label: Osteoblast cells
+    description: Osteoblast cells. Maps to SBML symbol `O`.
+  - name: chondrocyte_cells
+    maps_to: schittler2010_progenitor_fate.chondrocyte_cells
+    label: Chondrocyte cells
+    description: Chondrocyte cells. Maps to SBML symbol `C`.
+  - name: state
+    maps_to: schittler2010_progenitor_fate.state
+    description: Full friendly observable record.
+  - name: summary
+    maps_to: schittler2010_progenitor_fate.summary
+    description: Core model run summary.
+  - name: species_labels
+    maps_to: schittler2010_progenitor_fate.species_labels
+    description: Friendly observable display labels.
+runtime:
+  duration: 10.0
+  communication_step: 1.0
+  initial_inputs: {}

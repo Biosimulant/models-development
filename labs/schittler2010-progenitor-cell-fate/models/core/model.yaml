@@ -1,0 +1,83 @@
+schema_version: '2.0'
+title: Schittler2010 progenitor cell-fate SBML model
+description: Mesenchymal progenitor fate model for osteoblast or chondrocyte differentiation
+  executed directly from SBML.
+standard: sbml
+tags:
+- development
+- sbml
+- tellurium
+- faithful
+authors:
+- Biosimulant Team
+- D Schittler
+- J Hasenauer
+- "F Allg\xF6wer"
+- S Waldherr
+upstream:
+  id: biomodels_ebi:BIOMD0000000493
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000493
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000493
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000493?filename=BIOMD0000000493_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.schittler2010_cell_fate_of_progenitor_cells_oste_biomd0000000493_model:Schittler2010CellFateOfProgenitorCellsOsteBiomd0000000493Model
+  init_kwargs:
+    model_path: data/BIOMD0000000493.xml
+    integration_step: 0.1
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: integration_step
+  value: 0.1
+  min: 0.0
+  units: model_time
+  description: Internal Tellurium sampling step.
+io:
+  inputs:
+  - name: starting_progenitor_cells
+    maps_to: P
+    label: Starting progenitor cells
+    default: 12.03
+    units: native SBML value
+    description: Setup-time initial progenitor-cell state. Maps to SBML symbol `P`.
+  - name: starting_bone_fate_cells
+    maps_to: O
+    label: Starting bone-fate cells
+    default: 0.14
+    units: native SBML value
+    description: Setup-time initial osteoblast or bone-fate cell state. Maps to SBML symbol
+      `O`.
+  - name: starting_cartilage_fate_cells
+    maps_to: C
+    label: Starting cartilage-fate cells
+    default: 0.14
+    units: native SBML value
+    description: Setup-time initial chondrocyte or cartilage-fate cell state. Maps to SBML
+      symbol `C`.
+  outputs:
+  - name: progenitor_cells
+    maps_to: P
+    label: Progenitor cells
+    description: Progenitor cells. Maps to SBML symbol `P`.
+  - name: osteoblast_cells
+    maps_to: O
+    label: Osteoblast cells
+    description: Osteoblast cells. Maps to SBML symbol `O`.
+  - name: chondrocyte_cells
+    maps_to: C
+    label: Chondrocyte cells
+    description: Chondrocyte cells. Maps to SBML symbol `C`.
+  - name: state
+    description: Full friendly observable record for reproducibility and downstream visualisation.
+      Raw SBML symbols remain traceable through maps_to and wrapper metadata.
+  - name: summary
+    description: Largest-change and peak summary across the simulated friendly observables.
+  - name: species_labels
+    description: Mapping from friendly observable keys to display labels.

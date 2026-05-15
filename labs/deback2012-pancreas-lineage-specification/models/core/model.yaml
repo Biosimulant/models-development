@@ -1,0 +1,94 @@
+schema_version: '2.0'
+title: deBack2012 pancreas lineage specification SBML model
+description: Two-cell pancreas endocrine/exocrine lineage specification model executed directly
+  from bundled SBML.
+standard: sbml
+tags:
+- development
+- sbml
+- tellurium
+- faithful
+authors:
+- Biosimulant Team
+- Walter de Back
+- Joseph Xu Zhou
+- Lutz Brusch
+upstream:
+  id: biomodels_ebi:BIOMD0000000435
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000435
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000435
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000435?filename=BIOMD0000000435_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.deback2012_lineage_specification_in_pancreas_dev_biomd0000000435_model:Deback2012LineageSpecificationInPancreasDevBiomd0000000435Model
+  init_kwargs:
+    model_path: data/BIOMD0000000435.xml
+    integration_step: 0.1
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: integration_step
+  value: 0.1
+  min: 0.0
+  units: model_time
+  description: Internal Tellurium sampling step.
+io:
+  inputs:
+  - name: starting_first_cell_first_fate_signal
+    maps_to: species_1
+    label: Starting first-cell first-fate signal
+    default: 0.0
+    units: native SBML value
+    description: Setup-time initial value for the first lineage signal in neighboring cell
+      i. Maps to SBML symbol `species_1` (`Xi`).
+  - name: starting_first_cell_second_fate_signal
+    maps_to: species_2
+    label: Starting first-cell second-fate signal
+    default: 0.0
+    units: native SBML value
+    description: Setup-time initial value for the second lineage signal in neighboring cell
+      i. Maps to SBML symbol `species_2` (`Yi`).
+  - name: starting_second_cell_first_fate_signal
+    maps_to: species_3
+    label: Starting second-cell first-fate signal
+    default: 0.0
+    units: native SBML value
+    description: Setup-time initial value for the first lineage signal in neighboring cell
+      j. Maps to SBML symbol `species_3` (`Xj`).
+  - name: starting_second_cell_second_fate_signal
+    maps_to: species_4
+    label: Starting second-cell second-fate signal
+    default: 0.0
+    units: native SBML value
+    description: Setup-time initial value for the second lineage signal in neighboring cell
+      j. Maps to SBML symbol `species_4` (`Yj`).
+  outputs:
+  - name: cell_i_first_lineage_signal
+    maps_to: species_1
+    label: Cell i first lineage signal
+    description: Cell i first lineage signal. Maps to SBML symbol `species_1`.
+  - name: cell_i_second_lineage_signal
+    maps_to: species_2
+    label: Cell i second lineage signal
+    description: Cell i second lineage signal. Maps to SBML symbol `species_2`.
+  - name: cell_j_first_lineage_signal
+    maps_to: species_3
+    label: Cell j first lineage signal
+    description: Cell j first lineage signal. Maps to SBML symbol `species_3`.
+  - name: cell_j_second_lineage_signal
+    maps_to: species_4
+    label: Cell j second lineage signal
+    description: Cell j second lineage signal. Maps to SBML symbol `species_4`.
+  - name: state
+    description: Full friendly observable record for reproducibility and downstream visualisation.
+      Raw SBML symbols remain traceable through maps_to and wrapper metadata.
+  - name: summary
+    description: Largest-change and peak summary across the simulated friendly observables.
+  - name: species_labels
+    description: Mapping from friendly observable keys to display labels.

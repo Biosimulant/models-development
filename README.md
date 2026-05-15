@@ -1,5 +1,8 @@
 # models-development
 
+> Storage-only repo: each former root model now lives in `labs/<slug>/model/` and is wrapped by
+> `labs/<slug>/lab.yaml`. This repo has no repo-level import catalog and no composed labs at the root.
+
 Curated collection of **developmental biology** simulation models for the **biosim** platform. This repository contains computational models of embryonic development, cell differentiation, tissue patterning, stem cell regulation, and developmental regulatory networks.
 
 ## What's Inside
@@ -60,9 +63,9 @@ Every model implements the `biosim.BioModule` interface:
 
 - **`inputs()`** — declares named input signals the module consumes
 - **`outputs()`** — declares named output signals the module produces
-- **`advance_to(t)`** — advances the model's internal state to time `t`
+- **`advance_window(t)`** — advances the model's internal state to time `t`
 
-Most curated models include Python source under `src/` and are wired together via `space.yaml` in composed simulations without additional code.
+Most curated models include Python source under `src/` and are wired together via `lab.yaml` in composed simulations without additional code.
 
 ### Model Standards
 
@@ -71,7 +74,7 @@ All models in this repository:
 - Are sourced from BioModels and other curated repositories
 - Include tellurium runtime for SBML execution
 - Provide `state` output for monitoring simulation results
-- Support configurable timesteps via `min_dt` parameter
+- Support configurable timesteps via `communication_step` parameter
 
 ### Running Models
 
@@ -104,7 +107,7 @@ pip install "biosim @ git+https://github.com/BioSimulant/biosim.git@main"
 
 To integrate developmental biology models into larger simulations:
 
-1. Reference models by `manifest_path` (e.g., `models/development-sbml-chickarmane2006-stem-cell-switch-reversible/model.yaml`)
+1. Reference models by `manifest_path` (e.g., `labs/development-sbml-chickarmane2006-stem-cell-switch-reversible/model/model.yaml`)
 2. Wire model outputs to inputs of other models in your space configuration
 3. Compose multi-scale simulations combining development with cell cycle, signaling, or gene regulation
 4. Configure runtime parameters and simulation duration
@@ -112,7 +115,7 @@ To integrate developmental biology models into larger simulations:
 ## Linking in biosim-platform
 
 - Models can be linked with explicit paths:
-  - `models/development-sbml-mbodj2016-mesoderm-specification-during-drosophi/model.yaml`
+  - `labs/development-sbml-mbodj2016-mesoderm-specification-during-drosophi/model/model.yaml`
 - Models can be composed with other domain models (signaling, gene regulation, etc.) in multi-scale simulations
 
 ## External Repos

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "c658e061-8258-4629-bb38-74c976b2ab6e",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "5564288a-2361-446c-99e4-dbdc81062b10",
+  "created_at": "2026-05-15T16:00:59.145254528+00:00",
+  "last_synced_at": "2026-05-15T17:00:14.561684+00:00",
+  "hub_manifest_hash": "752a1223cf3787390d2862ba65bc68141ec2b8662b066c0ee52381c5d74fce3e",
+  "package_name": "muraro2011-auxin-cytokinin-root-fate-lab"
+}

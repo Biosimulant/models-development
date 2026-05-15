@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Muraro2011 Auxin Cytokinin Root Fate Lab
+description: Auxin-cytokinin cross-regulation model for Arabidopsis root cell-fate determination
+  executed directly from SBML.
+models:
+- alias: muraro2011_root_fate
+  path: models/core
+  parameters:
+    model_path: data/BIOMD0000000416.xml
+    integration_step: 0.1
+- alias: visualisation
+  path: models/visualisation
+wiring:
+- from: muraro2011_root_fate.state
+  to:
+  - visualisation.core_state
+- from: muraro2011_root_fate.summary
+  to:
+  - visualisation.core_summary
+- from: muraro2011_root_fate.species_labels
+  to:
+  - visualisation.core_species_labels
+io:
+  inputs:
+  - name: starting_auxin_level
+    maps_to: muraro2011_root_fate.starting_auxin_level
+    label: Starting auxin level
+    default: 1.0
+    units: native SBML value
+    description: Setup-time initial auxin level for the root-fate network. Maps to SBML symbol
+      `Aux`.
+  - name: starting_cytokinin_level
+    maps_to: muraro2011_root_fate.starting_cytokinin_level
+    label: Starting cytokinin level
+    default: 1.0
+    units: native SBML value
+    description: Setup-time initial cytokinin level for the root-fate network. Maps to SBML
+      symbol `Ck`.
+  outputs:
+  - name: auxin
+    maps_to: muraro2011_root_fate.auxin
+    label: Auxin
+    description: Auxin. Maps to SBML symbol `Aux`.
+  - name: cytokinin
+    maps_to: muraro2011_root_fate.cytokinin
+    label: Cytokinin
+    description: Cytokinin. Maps to SBML symbol `Ck`.
+  - name: indole_3_acetic_acid_messenger_rna
+    maps_to: muraro2011_root_fate.indole_3_acetic_acid_messenger_rna
+    label: IAA mRNA
+    description: IAA mRNA. Maps to SBML symbol `IAAm`.
+  - name: indole_3_acetic_acid_protein
+    maps_to: muraro2011_root_fate.indole_3_acetic_acid_protein
+    label: IAA protein
+    description: IAA protein. Maps to SBML symbol `IAAp`.
+  - name: auxin_transport_inhibitor_response_1_complex
+    maps_to: muraro2011_root_fate.auxin_transport_inhibitor_response_1_complex
+    label: Auxin-TIR1 complex
+    description: Auxin-TIR1 complex. Maps to SBML symbol `AuxTIR1`.
+  - name: auxin_indole_3_acetic_acid_complex
+    maps_to: muraro2011_root_fate.auxin_indole_3_acetic_acid_complex
+    label: Auxin-IAA complex
+    description: Auxin-IAA complex. Maps to SBML symbol `AuxTIAA`.
+  - name: auxin_response_factor_activity
+    maps_to: muraro2011_root_fate.auxin_response_factor_activity
+    label: ARF activity
+    description: ARF activity. Maps to SBML symbol `ARF`.
+  - name: pinformed_messenger_rna
+    maps_to: muraro2011_root_fate.pinformed_messenger_rna
+    label: PIN mRNA
+    description: PIN mRNA. Maps to SBML symbol `PINm`.
+  - name: pinformed_protein
+    maps_to: muraro2011_root_fate.pinformed_protein
+    label: PIN protein
+    description: PIN protein. Maps to SBML symbol `PINp`.
+  - name: response_regulator_a
+    maps_to: muraro2011_root_fate.response_regulator_a
+    label: Response regulator A
+    description: Response regulator A. Maps to SBML symbol `ARRAp`.
+  - name: response_regulator_b
+    maps_to: muraro2011_root_fate.response_regulator_b
+    label: Response regulator B
+    description: Response regulator B. Maps to SBML symbol `ARRBp`.
+  - name: state
+    maps_to: muraro2011_root_fate.state
+    description: Full friendly observable record.
+  - name: summary
+    maps_to: muraro2011_root_fate.summary
+    description: Core model run summary.
+  - name: species_labels
+    maps_to: muraro2011_root_fate.species_labels
+    description: Friendly observable display labels.
+runtime:
+  duration: 10.0
+  communication_step: 1.0
+  initial_inputs: {}

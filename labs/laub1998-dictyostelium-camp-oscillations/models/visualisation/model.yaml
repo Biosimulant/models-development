@@ -1,0 +1,99 @@
+schema_version: '2.0'
+title: Laub1998 Dictyostelium Cyclic AMP Oscillations Lab Visualisation
+description: Dedicated presentation model for Laub1998 Dictyostelium Cyclic AMP Oscillations
+  Lab.
+standard: other
+tags:
+- development
+- visualisation
+authors:
+- Biosimulant Team
+biosim:
+  entrypoint: src.development_visualisation:DevelopmentVisualisationModel
+  init_kwargs:
+    integration_step: 1.0
+    lab_title: Laub1998 Dictyostelium Cyclic AMP Oscillations Lab
+    question: Does the signaling network show coordinated spontaneous oscillatory
+      activity?
+    answer_focus: The answer compares extracellular and intracellular cyclic AMP with
+      protein kinase A, phosphodiesterase, adenylate cyclase, cyclic AMP receptor,
+      and ERK2 signaling states.
+    caveat: SBML species IDs are generic; display labels come from source species
+      names.
+    observables:
+    - source_id: species_0
+      port: extracellular_cyclic_amp
+      label: Extracellular cyclic AMP
+      group: cyclic_amp
+    - source_id: species_1
+      port: intracellular_cyclic_amp
+      label: Intracellular cyclic AMP
+      group: cyclic_amp
+    - source_id: species_2
+      port: protein_kinase_a_activity
+      label: Protein kinase A activity
+      group: protein_kinase_a
+    - source_id: species_3
+      port: cyclic_amp_phosphodiesterase_regulator_a
+      label: cAMP phosphodiesterase REGA
+      group: regulator
+    - source_id: species_4
+      port: adenylate_cyclase_a
+      label: Adenylate cyclase A
+      group: cyclic_amp
+    - source_id: species_5
+      port: cyclic_amp_receptor_one
+      label: Cyclic AMP receptor 1
+      group: receptor
+    - source_id: species_6
+      port: extracellular_signal_regulated_kinase_two
+      label: ERK2
+      group: erk
+    phase:
+      x: extracellular_cyclic_amp
+      y: intracellular_cyclic_amp
+      x_label: Extracellular cyclic AMP
+      y_label: Intracellular cyclic AMP
+      title: Extracellular cyclic AMP vs Intracellular cyclic AMP
+  communication_step: 1.0
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: model_time
+  description: Sampling step for the visualisation model.
+io:
+  inputs:
+  - name: core_state
+    description: Current friendly observable values from the core model.
+    schema:
+      extracellular_cyclic_amp: float
+      intracellular_cyclic_amp: float
+      protein_kinase_a_activity: float
+      cyclic_amp_phosphodiesterase_regulator_a: float
+      adenylate_cyclase_a: float
+      cyclic_amp_receptor_one: float
+      extracellular_signal_regulated_kinase_two: float
+  - name: core_summary
+    description: Core model run summary.
+    schema:
+      duration_simulated: float
+      observable_count: int
+      largest_change_observable: str
+      largest_change_magnitude: float
+      peak_observable: str
+      peak_value: float
+  - name: core_species_labels
+    description: Human-readable labels for core observables.
+    schema:
+      extracellular_cyclic_amp: str
+      intracellular_cyclic_amp: str
+      protein_kinase_a_activity: str
+      cyclic_amp_phosphodiesterase_regulator_a: str
+      adenylate_cyclase_a: str
+      cyclic_amp_receptor_one: str
+      extracellular_signal_regulated_kinase_two: str
+  outputs: []

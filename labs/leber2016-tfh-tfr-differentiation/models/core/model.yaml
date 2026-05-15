@@ -1,0 +1,106 @@
+schema_version: '2.0'
+title: Leber2016 Tfh-Tfr differentiation SBML model
+description: Expanded Tfh/Tfr differentiation model for Helicobacter pylori infection executed
+  directly from bundled SBML.
+standard: sbml
+tags:
+- development
+- sbml
+- tellurium
+- faithful
+authors:
+- Biosimulant Team
+- Andrew Leber
+- Vida Abedi
+- Raquel Hontecillas
+- Monica Viladomiu
+- Stefan Hoops
+upstream:
+  id: biomodels_ebi:BIOMD0000000625
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000625
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000625
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000625?filename=BIOMD0000000625_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.leber2016_expanded_model_of_tfh_tfr_differentiat_biomd0000000625_model:Leber2016ExpandedModelOfTfhTfrDifferentiatBiomd0000000625Model
+  init_kwargs:
+    model_path: data/BIOMD0000000625.xml
+    integration_step: 0.1
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: integration_step
+  value: 0.1
+  min: 0.0
+  units: model_time
+  description: Internal Tellurium sampling step.
+io:
+  inputs:
+  - name: interleukin_2_signal
+    maps_to: IL2
+    label: IL-2 signal
+    default: 0.0001
+    units: native SBML value
+    description: Sets the constant IL-2 upstream signal in the Tfh/Tfr differentiation network.
+      Maps to SBML symbol `IL2`.
+  - name: stat5_signal
+    maps_to: STAT5
+    label: STAT5 signal
+    default: 0.0
+    units: native SBML value
+    description: Sets the constant STAT5 upstream signal in the Tfh/Tfr differentiation network.
+      Maps to SBML symbol `STAT5`.
+  outputs:
+  - name: naive_cluster_of_differentiation_four_t_cells
+    maps_to: NaiveCD4
+    label: Naive CD4 T cells
+    description: Naive CD4 T cells. Maps to SBML symbol `NaiveCD4`.
+  - name: natural_regulatory_t_cells
+    maps_to: nTreg
+    label: Natural regulatory T cells
+    description: Natural regulatory T cells. Maps to SBML symbol `nTreg`.
+  - name: follicular_helper_t_cells
+    maps_to: Tfh
+    label: Follicular helper T cells
+    description: Follicular helper T cells. Maps to SBML symbol `Tfh`.
+  - name: follicular_regulatory_t_cells
+    maps_to: Tfr
+    label: Follicular regulatory T cells
+    description: Follicular regulatory T cells. Maps to SBML symbol `Tfr`.
+  - name: b_cell_lymphoma_six
+    maps_to: Bcl6
+    label: Bcl6
+    description: Bcl6. Maps to SBML symbol `Bcl6`.
+  - name: b_lymphocyte_induced_maturation_protein_one
+    maps_to: Blimp1
+    label: Blimp1
+    description: Blimp1. Maps to SBML symbol `Blimp1`.
+  - name: forkhead_box_p3
+    maps_to: FoxP3
+    label: FOXP3
+    description: FOXP3. Maps to SBML symbol `FoxP3`.
+  - name: signal_transducer_and_activator_of_transcription_3
+    maps_to: STAT3
+    label: STAT3
+    description: STAT3. Maps to SBML symbol `STAT3`.
+  - name: interleukin_6
+    maps_to: IL6
+    label: IL-6
+    description: IL-6. Maps to SBML symbol `IL6`.
+  - name: interleukin_21
+    maps_to: IL21
+    label: IL-21
+    description: IL-21. Maps to SBML symbol `IL21`.
+  - name: state
+    description: Full friendly observable record for reproducibility and downstream visualisation.
+      Raw SBML symbols remain traceable through maps_to and wrapper metadata.
+  - name: summary
+    description: Largest-change and peak summary across the simulated friendly observables.
+  - name: species_labels
+    description: Mapping from friendly observable keys to display labels.

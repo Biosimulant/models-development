@@ -1,0 +1,159 @@
+schema_version: '2.0'
+title: Leber2016 Follicular T Cell Differentiation Lab Visualisation
+description: Dedicated presentation model for Leber2016 Follicular T Cell Differentiation
+  Lab.
+standard: other
+tags:
+- development
+- visualisation
+authors:
+- Biosimulant Team
+biosim:
+  entrypoint: src.development_visualisation:DevelopmentVisualisationModel
+  init_kwargs:
+    integration_step: 1.0
+    lab_title: Leber2016 Follicular T Cell Differentiation Lab
+    question: Does the simulated network favor follicular helper or follicular regulatory
+      T cell differentiation?
+    answer_focus: The answer compares follicular helper T cells, follicular regulatory
+      T cells, naive CD4 T cells, regulatory T cells, Bcl6, Blimp1, FOXP3, STAT3,
+      IL-6, and IL-21 states.
+    caveat: This broad immune cell-fate model is kept as development-relevant differentiation
+      biology.
+    observables:
+    - source_id: NaiveCD4
+      port: naive_cluster_of_differentiation_four_t_cells
+      label: Naive CD4 T cells
+      group: cell_fate
+    - source_id: nTreg
+      port: natural_regulatory_t_cells
+      label: Natural regulatory T cells
+      group: cell_fate
+    - source_id: Tfh
+      port: follicular_helper_t_cells
+      label: Follicular helper T cells
+      group: cell_fate
+    - source_id: Tfr
+      port: follicular_regulatory_t_cells
+      label: Follicular regulatory T cells
+      group: cell_fate
+    - source_id: Bcl6
+      port: b_cell_lymphoma_six
+      label: Bcl6
+      group: regulator
+    - source_id: Blimp1
+      port: b_lymphocyte_induced_maturation_protein_one
+      label: Blimp1
+      group: regulator
+    - source_id: FoxP3
+      port: forkhead_box_p3
+      label: FOXP3
+      group: regulator
+    - source_id: STAT3
+      port: signal_transducer_and_activator_of_transcription_3
+      label: STAT3
+      group: regulator
+    - source_id: IL4
+      port: interleukin_4
+      label: IL-4
+      group: cytokine
+    - source_id: IL6
+      port: interleukin_6
+      label: IL-6
+      group: cytokine
+    - source_id: IL10
+      port: interleukin_10
+      label: IL-10
+      group: cytokine
+    - source_id: IL21
+      port: interleukin_21
+      label: IL-21
+      group: cytokine
+    - source_id: CXCR5
+      port: chemokine_receptor_type_five
+      label: Chemokine receptor type 5
+      group: receptor
+    - source_id: ICOS
+      port: inducible_t_cell_costimulator
+      label: ICOS
+      group: receptor
+    - source_id: TGFb
+      port: transforming_growth_factor_beta
+      label: TGF-beta
+      group: cytokine
+    - source_id: Tgif1
+      port: transforming_growth_factor_beta_induced_factor_homeobox_one
+      label: Tgif1
+      group: regulator
+    - source_id: RXR
+      port: retinoid_receptor
+      label: RXR
+      group: regulator
+    phase:
+      x: follicular_helper_t_cells
+      y: follicular_regulatory_t_cells
+      x_label: Follicular helper T cells
+      y_label: Follicular regulatory T cells
+      title: Follicular helper T cells vs Follicular regulatory T cells
+  communication_step: 1.0
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: model_time
+  description: Sampling step for the visualisation model.
+io:
+  inputs:
+  - name: core_state
+    description: Current friendly observable values from the core model.
+    schema:
+      naive_cluster_of_differentiation_four_t_cells: float
+      natural_regulatory_t_cells: float
+      follicular_helper_t_cells: float
+      follicular_regulatory_t_cells: float
+      b_cell_lymphoma_six: float
+      b_lymphocyte_induced_maturation_protein_one: float
+      forkhead_box_p3: float
+      signal_transducer_and_activator_of_transcription_3: float
+      interleukin_4: float
+      interleukin_6: float
+      interleukin_10: float
+      interleukin_21: float
+      chemokine_receptor_type_five: float
+      inducible_t_cell_costimulator: float
+      transforming_growth_factor_beta: float
+      transforming_growth_factor_beta_induced_factor_homeobox_one: float
+      retinoid_receptor: float
+  - name: core_summary
+    description: Core model run summary.
+    schema:
+      duration_simulated: float
+      observable_count: int
+      largest_change_observable: str
+      largest_change_magnitude: float
+      peak_observable: str
+      peak_value: float
+  - name: core_species_labels
+    description: Human-readable labels for core observables.
+    schema:
+      naive_cluster_of_differentiation_four_t_cells: str
+      natural_regulatory_t_cells: str
+      follicular_helper_t_cells: str
+      follicular_regulatory_t_cells: str
+      b_cell_lymphoma_six: str
+      b_lymphocyte_induced_maturation_protein_one: str
+      forkhead_box_p3: str
+      signal_transducer_and_activator_of_transcription_3: str
+      interleukin_4: str
+      interleukin_6: str
+      interleukin_10: str
+      interleukin_21: str
+      chemokine_receptor_type_five: str
+      inducible_t_cell_costimulator: str
+      transforming_growth_factor_beta: str
+      transforming_growth_factor_beta_induced_factor_homeobox_one: str
+      retinoid_receptor: str
+  outputs: []

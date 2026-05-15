@@ -1,0 +1,85 @@
+schema_version: '2.0'
+title: Chickarmane2006 Irreversible Stem Cell Switch Lab Visualisation
+description: Dedicated presentation model for Chickarmane2006 Irreversible Stem Cell
+  Switch Lab.
+standard: other
+tags:
+- development
+- visualisation
+authors:
+- Biosimulant Team
+biosim:
+  entrypoint: src.development_visualisation:DevelopmentVisualisationModel
+  init_kwargs:
+    integration_step: 1.0
+    lab_title: Chickarmane2006 Irreversible Stem Cell Switch Lab
+    question: Does the irreversible switch leave the pluripotency marker state?
+    answer_focus: The answer compares OCT4, SOX2, NANOG, OCT4-SOX2 complex, and differentiation
+      protein levels.
+    caveat: Values are native SBML quantities; the transcriptional equations are not
+      reimplemented.
+    observables:
+    - source_id: OCT4
+      port: octamer_binding_transcription_factor_4
+      label: OCT4
+      group: pluripotency
+    - source_id: SOX2
+      port: sry_box_transcription_factor_2
+      label: SOX2
+      group: pluripotency
+    - source_id: NANOG
+      port: nanog_homeobox
+      label: NANOG
+      group: pluripotency
+    - source_id: OCT4_SOX2
+      port: octamer_binding_transcription_factor_4_sry_box_transcription_factor_2_complex
+      label: OCT4-SOX2 complex
+      group: complex
+    - source_id: Protein
+      port: differentiation_protein
+      label: Differentiation protein
+      group: differentiation
+    phase:
+      x: octamer_binding_transcription_factor_4
+      y: nanog_homeobox
+      x_label: OCT4
+      y_label: NANOG
+      title: OCT4 vs NANOG
+  communication_step: 1.0
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: model_time
+  description: Sampling step for the visualisation model.
+io:
+  inputs:
+  - name: core_state
+    description: Current friendly observable values from the core model.
+    schema:
+      octamer_binding_transcription_factor_4: float
+      sry_box_transcription_factor_2: float
+      nanog_homeobox: float
+      octamer_binding_transcription_factor_4_sry_box_transcription_factor_2_complex: float
+      differentiation_protein: float
+  - name: core_summary
+    description: Core model run summary.
+    schema:
+      duration_simulated: float
+      observable_count: int
+      largest_change_observable: str
+      largest_change_magnitude: float
+      peak_observable: str
+      peak_value: float
+  - name: core_species_labels
+    description: Human-readable labels for core observables.
+    schema:
+      octamer_binding_transcription_factor_4: str
+      sry_box_transcription_factor_2: str
+      nanog_homeobox: str
+      octamer_binding_transcription_factor_4_sry_box_transcription_factor_2_complex: str
+      differentiation_protein: str
+  outputs: []

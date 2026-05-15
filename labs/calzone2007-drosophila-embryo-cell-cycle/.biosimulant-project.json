@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "51690344-ea9f-4d68-9143-c74011a93987",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "fac689ce-ae8d-480d-8a46-c20a6d700356",
+  "created_at": "2026-05-15T14:37:25.452984882+00:00",
+  "last_synced_at": "2026-05-15T16:57:50.215417+00:00",
+  "hub_manifest_hash": "af51d97d4311ab7737fac54cdb08990ff4a7e99f9be7df2ae049d90aa597da8c",
+  "package_name": "calzone2007-drosophila-embryo-cell-cycle-lab"
+}

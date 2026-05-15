@@ -1,0 +1,88 @@
+schema_version: '2.0'
+title: Intosalmi2015 Th17 Differentiation Network Lab
+description: Core molecular network steering Th17 cell differentiation executed directly from
+  the bundled SBML source.
+models:
+- alias: intosalmi2015_th17_network
+  path: models/core
+  parameters:
+    model_path: data/BIOMD0000001004.xml
+    integration_step: 0.1
+- alias: visualisation
+  path: models/visualisation
+wiring:
+- from: intosalmi2015_th17_network.state
+  to:
+  - visualisation.core_state
+- from: intosalmi2015_th17_network.summary
+  to:
+  - visualisation.core_summary
+- from: intosalmi2015_th17_network.species_labels
+  to:
+  - visualisation.core_species_labels
+io:
+  inputs:
+  - name: starting_interleukin_6_signal
+    maps_to: intosalmi2015_th17_network.starting_interleukin_6_signal
+    label: Starting IL-6 signal
+    default: 1.0
+    units: native SBML value
+    description: Setup-time initial extracellular IL-6 signal for the Th17 network. Maps to
+      SBML symbol `IL6ext`.
+  - name: starting_transforming_growth_factor_beta_signal
+    maps_to: intosalmi2015_th17_network.starting_transforming_growth_factor_beta_signal
+    label: Starting TGF-beta signal
+    default: 1.0
+    units: native SBML value
+    description: Setup-time initial extracellular TGF-beta signal for the Th17 network. Maps
+      to SBML symbol `TGFbext`.
+  outputs:
+  - name: external_interleukin_6
+    maps_to: intosalmi2015_th17_network.external_interleukin_6
+    label: External IL-6
+    description: External IL-6. Maps to SBML symbol `IL6ext`.
+  - name: internal_interleukin_6
+    maps_to: intosalmi2015_th17_network.internal_interleukin_6
+    label: Internal IL-6
+    description: Internal IL-6. Maps to SBML symbol `IL6int`.
+  - name: signal_transducer_and_activator_of_transcription_3_messenger_rna
+    maps_to: intosalmi2015_th17_network.signal_transducer_and_activator_of_transcription_3_messenger_rna
+    label: STAT3 mRNA
+    description: STAT3 mRNA. Maps to SBML symbol `STAT3mRNA`.
+  - name: active_signal_transducer_and_activator_of_transcription_3
+    maps_to: intosalmi2015_th17_network.active_signal_transducer_and_activator_of_transcription_3
+    label: Active STAT3
+    description: Active STAT3. Maps to SBML symbol `STAT3prot_star`.
+  - name: external_transforming_growth_factor_beta
+    maps_to: intosalmi2015_th17_network.external_transforming_growth_factor_beta
+    label: External TGF-beta
+    description: External TGF-beta. Maps to SBML symbol `TGFbext`.
+  - name: internal_transforming_growth_factor_beta
+    maps_to: intosalmi2015_th17_network.internal_transforming_growth_factor_beta
+    label: Internal TGF-beta
+    description: Internal TGF-beta. Maps to SBML symbol `TGFbint`.
+  - name: retinoic_acid_receptor_related_orphan_receptor_gamma_t_messenger_rna
+    maps_to: intosalmi2015_th17_network.retinoic_acid_receptor_related_orphan_receptor_gamma_t_messenger_rna
+    label: ROR-gamma-t mRNA
+    description: ROR-gamma-t mRNA. Maps to SBML symbol `RORgtmRNA`.
+  - name: active_forkhead_box_p3
+    maps_to: intosalmi2015_th17_network.active_forkhead_box_p3
+    label: Active FOXP3
+    description: Active FOXP3. Maps to SBML symbol `FOXP3prot_star`.
+  - name: forkhead_box_p3_messenger_rna
+    maps_to: intosalmi2015_th17_network.forkhead_box_p3_messenger_rna
+    label: FOXP3 mRNA
+    description: FOXP3 mRNA. Maps to SBML symbol `FOXP3mRNA`.
+  - name: state
+    maps_to: intosalmi2015_th17_network.state
+    description: Full friendly observable record.
+  - name: summary
+    maps_to: intosalmi2015_th17_network.summary
+    description: Core model run summary.
+  - name: species_labels
+    maps_to: intosalmi2015_th17_network.species_labels
+    description: Friendly observable display labels.
+runtime:
+  duration: 10.0
+  communication_step: 1.0
+  initial_inputs: {}

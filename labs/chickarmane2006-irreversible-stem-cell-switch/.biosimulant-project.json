@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "829a8467-7a65-47f6-b4ec-36e78f440ab6",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "06de6b4a-33e4-414b-86aa-5bb264d9ce28",
+  "created_at": "2026-05-15T16:00:59.033899354+00:00",
+  "last_synced_at": "2026-05-15T16:58:08.798188+00:00",
+  "hub_manifest_hash": "59e8146f9c62dfd67ecdd7ee07a7d984120d1857e7d9b0b95b0ca98f67fab0eb",
+  "package_name": "chickarmane2006-irreversible-stem-cell-switch-lab"
+}

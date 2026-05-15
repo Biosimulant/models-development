@@ -1,0 +1,65 @@
+schema_version: '2.0'
+title: Chickarmane2006 Reversible Stem Cell Switch Lab
+description: Reversible embryonic stem-cell transcriptional switch executed directly from
+  the bundled SBML source.
+models:
+- alias: chickarmane2006_reversible_switch
+  path: models/core
+  parameters:
+    model_path: data/BIOMD0000000203.xml
+    integration_step: 0.1
+- alias: visualisation
+  path: models/visualisation
+wiring:
+- from: chickarmane2006_reversible_switch.state
+  to:
+  - visualisation.core_state
+- from: chickarmane2006_reversible_switch.summary
+  to:
+  - visualisation.core_summary
+- from: chickarmane2006_reversible_switch.species_labels
+  to:
+  - visualisation.core_species_labels
+io:
+  inputs:
+  - name: p53_signal
+    maps_to: chickarmane2006_reversible_switch.p53_signal
+    label: p53 signal
+    default: 0.0
+    units: native SBML value
+    description: Sets the fixed p53 boundary signal used by the stem-cell switch reactions.
+      Maps to SBML symbol `p53`.
+  outputs:
+  - name: octamer_binding_transcription_factor_4
+    maps_to: chickarmane2006_reversible_switch.octamer_binding_transcription_factor_4
+    label: OCT4
+    description: OCT4. Maps to SBML symbol `OCT4`.
+  - name: sry_box_transcription_factor_2
+    maps_to: chickarmane2006_reversible_switch.sry_box_transcription_factor_2
+    label: SOX2
+    description: SOX2. Maps to SBML symbol `SOX2`.
+  - name: nanog_homeobox
+    maps_to: chickarmane2006_reversible_switch.nanog_homeobox
+    label: NANOG
+    description: NANOG. Maps to SBML symbol `NANOG`.
+  - name: octamer_binding_transcription_factor_4_sry_box_transcription_factor_2_complex
+    maps_to: chickarmane2006_reversible_switch.octamer_binding_transcription_factor_4_sry_box_transcription_factor_2_complex
+    label: OCT4-SOX2 complex
+    description: OCT4-SOX2 complex. Maps to SBML symbol `OCT4_SOX2`.
+  - name: differentiation_protein
+    maps_to: chickarmane2006_reversible_switch.differentiation_protein
+    label: Differentiation protein
+    description: Differentiation protein. Maps to SBML symbol `Protein`.
+  - name: state
+    maps_to: chickarmane2006_reversible_switch.state
+    description: Full friendly observable record.
+  - name: summary
+    maps_to: chickarmane2006_reversible_switch.summary
+    description: Core model run summary.
+  - name: species_labels
+    maps_to: chickarmane2006_reversible_switch.species_labels
+    description: Friendly observable display labels.
+runtime:
+  duration: 10.0
+  communication_step: 1.0
+  initial_inputs: {}

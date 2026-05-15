@@ -1,0 +1,127 @@
+schema_version: '2.0'
+title: Muraro2011 Auxin Cytokinin Root Fate Lab Visualisation
+description: Dedicated presentation model for Muraro2011 Auxin Cytokinin Root Fate
+  Lab.
+standard: other
+tags:
+- development
+- visualisation
+authors:
+- Biosimulant Team
+biosim:
+  entrypoint: src.development_visualisation:DevelopmentVisualisationModel
+  init_kwargs:
+    integration_step: 1.0
+    lab_title: Muraro2011 Auxin Cytokinin Root Fate Lab
+    question: How does auxin-cytokinin cross-regulation shape root cell-fate signaling?
+    answer_focus: The answer compares auxin, cytokinin, indole-3-acetic acid, auxin
+      response factor, PIN-FORMED, and response regulator activity.
+    caveat: Assignment-rule observables are used only when they map to source SBML
+      symbols.
+    observables:
+    - source_id: Aux
+      port: auxin
+      label: Auxin
+      group: hormone
+    - source_id: Ck
+      port: cytokinin
+      label: Cytokinin
+      group: hormone
+    - source_id: IAAm
+      port: indole_3_acetic_acid_messenger_rna
+      label: IAA mRNA
+      group: indole_3_acetic_acid
+    - source_id: IAAp
+      port: indole_3_acetic_acid_protein
+      label: IAA protein
+      group: indole_3_acetic_acid
+    - source_id: AuxTIR1
+      port: auxin_transport_inhibitor_response_1_complex
+      label: Auxin-TIR1 complex
+      group: auxin
+    - source_id: AuxTIAA
+      port: auxin_indole_3_acetic_acid_complex
+      label: Auxin-IAA complex
+      group: auxin
+    - source_id: ARF
+      port: auxin_response_factor_activity
+      label: ARF activity
+      group: auxin_response_factor
+    - source_id: PINm
+      port: pinformed_messenger_rna
+      label: PIN mRNA
+      group: pinformed
+    - source_id: PINp
+      port: pinformed_protein
+      label: PIN protein
+      group: pinformed
+    - source_id: ARRAp
+      port: response_regulator_a
+      label: Response regulator A
+      group: response_regulator
+    - source_id: ARRBp
+      port: response_regulator_b
+      label: Response regulator B
+      group: response_regulator
+    - source_id: CkAHKph
+      port: phosphorylated_cytokinin_histidine_kinase
+      label: Phosphorylated cytokinin histidine kinase
+      group: cytokinin
+    phase:
+      x: auxin
+      y: cytokinin
+      x_label: Auxin
+      y_label: Cytokinin
+      title: Auxin vs Cytokinin
+  communication_step: 1.0
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: model_time
+  description: Sampling step for the visualisation model.
+io:
+  inputs:
+  - name: core_state
+    description: Current friendly observable values from the core model.
+    schema:
+      auxin: float
+      cytokinin: float
+      indole_3_acetic_acid_messenger_rna: float
+      indole_3_acetic_acid_protein: float
+      auxin_transport_inhibitor_response_1_complex: float
+      auxin_indole_3_acetic_acid_complex: float
+      auxin_response_factor_activity: float
+      pinformed_messenger_rna: float
+      pinformed_protein: float
+      response_regulator_a: float
+      response_regulator_b: float
+      phosphorylated_cytokinin_histidine_kinase: float
+  - name: core_summary
+    description: Core model run summary.
+    schema:
+      duration_simulated: float
+      observable_count: int
+      largest_change_observable: str
+      largest_change_magnitude: float
+      peak_observable: str
+      peak_value: float
+  - name: core_species_labels
+    description: Human-readable labels for core observables.
+    schema:
+      auxin: str
+      cytokinin: str
+      indole_3_acetic_acid_messenger_rna: str
+      indole_3_acetic_acid_protein: str
+      auxin_transport_inhibitor_response_1_complex: str
+      auxin_indole_3_acetic_acid_complex: str
+      auxin_response_factor_activity: str
+      pinformed_messenger_rna: str
+      pinformed_protein: str
+      response_regulator_a: str
+      response_regulator_b: str
+      phosphorylated_cytokinin_histidine_kinase: str
+  outputs: []

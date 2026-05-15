@@ -1,0 +1,115 @@
+schema_version: '2.0'
+title: Intosalmi2015 Th17 Differentiation Network Lab Visualisation
+description: Dedicated presentation model for Intosalmi2015 Th17 Differentiation Network
+  Lab.
+standard: other
+tags:
+- development
+- visualisation
+authors:
+- Biosimulant Team
+biosim:
+  entrypoint: src.development_visualisation:DevelopmentVisualisationModel
+  init_kwargs:
+    integration_step: 1.0
+    lab_title: Intosalmi2015 Th17 Differentiation Network Lab
+    question: Which Th17 differentiation module carries the strongest simulated response?
+    answer_focus: The answer compares IL-6, TGF-beta, STAT3, ROR-gamma-t, and FOXP3
+      network activity.
+    caveat: External cytokines are modeled SBML states, not user interventions in
+      this cleanup.
+    observables:
+    - source_id: IL6ext
+      port: external_interleukin_6
+      label: External IL-6
+      group: cytokine
+    - source_id: IL6int
+      port: internal_interleukin_6
+      label: Internal IL-6
+      group: cytokine
+    - source_id: STAT3mRNA
+      port: signal_transducer_and_activator_of_transcription_3_messenger_rna
+      label: STAT3 mRNA
+      group: stat3
+    - source_id: STAT3prot_star
+      port: active_signal_transducer_and_activator_of_transcription_3
+      label: Active STAT3
+      group: stat3
+    - source_id: STAT3prot
+      port: signal_transducer_and_activator_of_transcription_3_protein
+      label: STAT3 protein
+      group: stat3
+    - source_id: TGFbext
+      port: external_transforming_growth_factor_beta
+      label: External TGF-beta
+      group: cytokine
+    - source_id: TGFbint
+      port: internal_transforming_growth_factor_beta
+      label: Internal TGF-beta
+      group: cytokine
+    - source_id: RORgtmRNA
+      port: retinoic_acid_receptor_related_orphan_receptor_gamma_t_messenger_rna
+      label: ROR-gamma-t mRNA
+      group: ror
+    - source_id: FOXP3prot_star
+      port: active_forkhead_box_p3
+      label: Active FOXP3
+      group: foxp3
+    - source_id: FOXP3mRNA
+      port: forkhead_box_p3_messenger_rna
+      label: FOXP3 mRNA
+      group: foxp3
+    phase:
+      x: active_signal_transducer_and_activator_of_transcription_3
+      y: active_forkhead_box_p3
+      x_label: Active STAT3
+      y_label: Active FOXP3
+      title: Active STAT3 vs Active FOXP3
+  communication_step: 1.0
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: model_time
+  description: Sampling step for the visualisation model.
+io:
+  inputs:
+  - name: core_state
+    description: Current friendly observable values from the core model.
+    schema:
+      external_interleukin_6: float
+      internal_interleukin_6: float
+      signal_transducer_and_activator_of_transcription_3_messenger_rna: float
+      active_signal_transducer_and_activator_of_transcription_3: float
+      signal_transducer_and_activator_of_transcription_3_protein: float
+      external_transforming_growth_factor_beta: float
+      internal_transforming_growth_factor_beta: float
+      retinoic_acid_receptor_related_orphan_receptor_gamma_t_messenger_rna: float
+      active_forkhead_box_p3: float
+      forkhead_box_p3_messenger_rna: float
+  - name: core_summary
+    description: Core model run summary.
+    schema:
+      duration_simulated: float
+      observable_count: int
+      largest_change_observable: str
+      largest_change_magnitude: float
+      peak_observable: str
+      peak_value: float
+  - name: core_species_labels
+    description: Human-readable labels for core observables.
+    schema:
+      external_interleukin_6: str
+      internal_interleukin_6: str
+      signal_transducer_and_activator_of_transcription_3_messenger_rna: str
+      active_signal_transducer_and_activator_of_transcription_3: str
+      signal_transducer_and_activator_of_transcription_3_protein: str
+      external_transforming_growth_factor_beta: str
+      internal_transforming_growth_factor_beta: str
+      retinoic_acid_receptor_related_orphan_receptor_gamma_t_messenger_rna: str
+      active_forkhead_box_p3: str
+      forkhead_box_p3_messenger_rna: str
+  outputs: []

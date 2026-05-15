@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "0dc6ab8d-baaa-4052-9b58-b53bfc22e872",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "b6195506-1d9a-4b2d-b0b6-db653e0feb05",
+  "created_at": "2026-05-15T15:12:03.148176112+00:00",
+  "last_synced_at": "2026-05-15T16:59:35.381893+00:00",
+  "hub_manifest_hash": "8deb3c1f8d0fa82436c8f4ac80cc0c2cece85d44e7528b7042cf8034caddd97e",
+  "package_name": "laub1998-dictyostelium-cyclic-amp-oscillations-lab"
+}
