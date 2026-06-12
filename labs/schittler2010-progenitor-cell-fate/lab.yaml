@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: schittler2010-progenitor-cell-fate
+version: 1.0.0
 title: Schittler2010 Progenitor Cell Fate Lab
 description: Mesenchymal progenitor fate model for osteoblast or chondrocyte differentiation
   executed directly from SBML.

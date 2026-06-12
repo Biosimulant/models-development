@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: roblitz2013-menstrual-cycle-gnrh-analogue
+version: 1.0.0
 title: Roblitz2013 Menstrual Cycle GnRH Analogue Lab
 description: Menstrual-cycle hormone and follicular development model executed directly from
   the bundled SBML source.

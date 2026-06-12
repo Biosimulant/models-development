@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: intosalmi2015-th17-differentiation-network
+version: 1.0.0
 title: Intosalmi2015 Th17 Differentiation Network Lab
 description: Core molecular network steering Th17 cell differentiation executed directly from
   the bundled SBML source.

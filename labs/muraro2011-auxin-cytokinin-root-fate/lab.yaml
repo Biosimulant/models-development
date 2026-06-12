@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: muraro2011-auxin-cytokinin-root-fate
+version: 1.0.0
 title: Muraro2011 Auxin Cytokinin Root Fate Lab
 description: Auxin-cytokinin cross-regulation model for Arabidopsis root cell-fate determination
   executed directly from SBML.

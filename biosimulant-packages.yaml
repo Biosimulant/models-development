@@ -1,0 +1,64 @@
+schema_version: "1"
+namespace: demi
+default_visibility: public
+packages:
+  - id: calzone2007-drosophila-embryo-cell-cycle-lab
+    package: calzone2007-drosophila-embryo-cell-cycle
+    version: 1.0.0
+    type: lab
+    path: labs/calzone2007-drosophila-embryo-cell-cycle
+    visibility: public
+  - id: chickarmane2006-irreversible-stem-cell-switch-lab
+    package: chickarmane2006-irreversible-stem-cell-switch
+    version: 1.0.0
+    type: lab
+    path: labs/chickarmane2006-irreversible-stem-cell-switch
+    visibility: public
+  - id: chickarmane2006-reversible-stem-cell-switch-lab
+    package: chickarmane2006-reversible-stem-cell-switch
+    version: 1.0.0
+    type: lab
+    path: labs/chickarmane2006-reversible-stem-cell-switch
+    visibility: public
+  - id: deback2012-pancreas-lineage-specification-lab
+    package: deback2012-pancreas-lineage-specification
+    version: 1.0.0
+    type: lab
+    path: labs/deback2012-pancreas-lineage-specification
+    visibility: public
+  - id: intosalmi2015-th17-differentiation-network-lab
+    package: intosalmi2015-th17-differentiation-network
+    version: 1.0.0
+    type: lab
+    path: labs/intosalmi2015-th17-differentiation-network
+    visibility: public
+  - id: laub1998-dictyostelium-camp-oscillations-lab
+    package: laub1998-dictyostelium-camp-oscillations
+    version: 1.0.0
+    type: lab
+    path: labs/laub1998-dictyostelium-camp-oscillations
+    visibility: public
+  - id: leber2016-tfh-tfr-differentiation-lab
+    package: leber2016-tfh-tfr-differentiation
+    version: 1.0.0
+    type: lab
+    path: labs/leber2016-tfh-tfr-differentiation
+    visibility: public
+  - id: muraro2011-auxin-cytokinin-root-fate-lab
+    package: muraro2011-auxin-cytokinin-root-fate
+    version: 1.0.0
+    type: lab
+    path: labs/muraro2011-auxin-cytokinin-root-fate
+    visibility: public
+  - id: roblitz2013-menstrual-cycle-gnrh-analogue-lab
+    package: roblitz2013-menstrual-cycle-gnrh-analogue
+    version: 1.0.0
+    type: lab
+    path: labs/roblitz2013-menstrual-cycle-gnrh-analogue
+    visibility: public
+  - id: schittler2010-progenitor-cell-fate-lab
+    package: schittler2010-progenitor-cell-fate
+    version: 1.0.0
+    type: lab
+    path: labs/schittler2010-progenitor-cell-fate
+    visibility: public

@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: laub1998-dictyostelium-camp-oscillations
+version: 1.0.0
 title: Laub1998 Dictyostelium Cyclic AMP Oscillations Lab
 description: Dictyostelium cyclic AMP signaling oscillator executed directly from
   the bundled SBML source.

@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: leber2016-tfh-tfr-differentiation
+version: 1.0.0
 title: Leber2016 Follicular T Cell Differentiation Lab
 description: Expanded Tfh/Tfr differentiation model for Helicobacter pylori infection executed
   directly from bundled SBML.

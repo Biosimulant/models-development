@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: chickarmane2006-reversible-stem-cell-switch
+version: 1.0.0
 title: Chickarmane2006 Reversible Stem Cell Switch Lab
 description: Reversible embryonic stem-cell transcriptional switch executed directly from
   the bundled SBML source.

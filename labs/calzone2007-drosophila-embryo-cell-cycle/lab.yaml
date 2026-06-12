@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: calzone2007-drosophila-embryo-cell-cycle
+version: 1.0.0
 title: Calzone2007 Drosophila Embryo Cell Cycle Lab
 description: Early Drosophila embryonic nuclear division cycle model executed directly
   from the bundled SBML source.
